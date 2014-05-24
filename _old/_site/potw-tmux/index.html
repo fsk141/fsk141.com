@@ -1,0 +1,457 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>[PotW] tmux</title>
+		
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>[PotW] tmux <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p><a href="http://www.flickr.com/photos/68444690@N00/5079825187/"><img src="http://farm5.static.flickr.com/4148/5079825187_d919ba6661.jpg" alt="Tmux-Fire" /></a></p>
+
+<p>It’s another Tuesday (errm almost tuesday – I got a little busy), and that means another PotW! This program is a little more useful than the last program. And makes living a mac more bearable (or any non tiling window manager for that matter) Tmux is the bees knees when it comes to console multi-tasking. It allows you to do a faux-tiling window manager with all your console apps, and the best part is that it’s cross platform. Just a little info about tmux: It stands for terminal multiplexer (cool name for multiplier), tmux is like screen’s pretty cousin, tmux is highly configurable, and a lot more stuff that I’ll have to split up in a few more posts. (this is just a primer, and yes I will talk about tmux more ;)</p>
+
+<p><strong>Program:</strong> tmux</p>
+
+<p><strong>Site Link:</strong> <a href="http://tmux.sourceforge.net">http://tmux.sourceforge.net</a></p>
+
+<p><strong>Download:</strong>
+  1. Download direct: <a href="http://downloads.sourceforge.net/tmux/tmux-1.3.tar.gz">http://downloads.sourceforge.net/tmux/tmux-1.3.tar.gz</a></p>
+
+<ol>
+  <li>Use CVS &amp; get the newest version: <a href="http://sourceforge.net/projects/tmux/develop">CVS instructions for tmux</a></li>
+</ol>
+
+<p><strong>Installation:</strong>
+  1. Use your package manager (pacman -S tmux for archlinux)</p>
+
+<ol>
+  <li>Mac (download <a href="http://github.com/mxcl/homebrew">homebrew</a> &amp;&amp; <strong>sudo brew install tmux</strong>)</li>
+</ol>
+
+<p><strong>Compile:</strong></p>
+
+<div>
+    <pre><code class="bash">./configure
+
+make -j8 (make with 8 jobs at once [compile faster on a core duo])
+
+sudo make install</code></pre>
+  </div>
+
+<p><strong>How to use:</strong></p>
+
+<p>Lets start with the basics. Fire up tmux, and lets learn how to get some, errrm, <strong>help!</strong></p>
+
+<ol>
+  <li>
+    <p><strong>man tmux</strong> (best resource, and well documented)</p>
+  </li>
+  <li>
+    <p>^b ? (Ctrl-?) [Press Ctrl-b, then ?] (will show commands with short descriptions)</p>
+  </li>
+</ol>
+
+<p><strong>Lets start with some basics:</strong></p>
+
+<ul>
+  <li>
+    <p>make a new vertical pane: ^b % (Carat <strong>’^’</strong> means Ctrl)</p>
+  </li>
+  <li>
+    <p>make a new horizontal pane: ^b “</p>
+  </li>
+  <li>
+    <p>make a new window: ^b c</p>
+  </li>
+  <li>
+    <p>rename window: ^b ,</p>
+  </li>
+  <li>
+    <p>move around: ^b (use arrow keys)</p>
+  </li>
+</ul>
+
+<p><strong>Now that you know your way around, lets have some fun:</strong></p>
+
+<ul>
+  <li>
+    <p>Find test in an open window: ^b f (this one tickles me pink, it’s so kewl that you can search for <em>anything</em>, and it will auto-move to the terminal your thinking of)</p>
+  </li>
+  <li>
+    <p>enter copy mode to copy text in buffer: ^b [</p>
+  </li>
+  <li>
+    <p>paste the text you’ve copied: ^b ]</p>
+  </li>
+  <li>
+    <p>what time is it?: ^b t</p>
+  </li>
+  <li>
+    <p>swap panes around: ^b { (previous pane) and } (next pane)</p>
+  </li>
+</ul>
+
+<p><strong>Screenshots:</strong></p>
+
+<p><a href="http://www.flickr.com/photos/68444690@N00/5079888455/"><img src="http://farm5.static.flickr.com/4086/5079888455_01587f0ece.jpg" alt="Layout 1" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/68444690@N00/5079888499/"><img src="http://farm5.static.flickr.com/4151/5079888499_00af64fd44.jpg" alt="Layout 2" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/68444690@N00/5080483798/"><img src="http://farm5.static.flickr.com/4024/5080483798_1db5595e95.jpg" alt="Layout 3" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/68444690@N00/5079888587/"><img src="http://farm5.static.flickr.com/4057/5079888587_fa64ed87c5.jpg" alt="Layout 4" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/68444690@N00/5080483908/"><img src="http://farm5.static.flickr.com/4037/5080483908_081502bc96.jpg" alt="Layout 5" /></a></p>
+
+<p><a href="http://www.flickr.com/photos/68444690@N00/5080485996/"><img src="http://farm5.static.flickr.com/4083/5080485996_fa273c2951.jpg" alt="window-naming" /></a></p>
+
+<p><strong>Default Bindings (all the things you can do):</strong></p>
+
+<div>
+    <pre><code class="bash">The default command key bindings are:
+
+C-b         Send the prefix key (C-b) through to the application.
+C-o         Rotate the panes in the current window forwards.
+C-z         Suspend the tmux client.
+!           Break the current pane out of the window.
+&quot;           Split the current pane into two, top and bottom.
+#           List all paste buffers.
+%           Split the current pane into two, left and right.
+&amp;           Kill the current window.
+&#39;           Prompt for a window index to select.
+,           Rename the current window.
+-           Delete the most recently copied buffer of text.
+.           Prompt for an index to move the current window.
+0 to 9      Select windows 0 to 9.
+:           Enter the tmux command prompt.
+=           Choose which buffer to paste interactively from a list.
+?           List all key bindings.
+D           Choose a client to detach.
+[           Enter copy mode to copy text or view the history.
+]           Paste the most recently copied buffer of text.
+c           Create a new window.
+d           Detach the current client.
+f           Prompt to search for text in open windows.
+i           Display some information about the current window.
+l           Move to the previously selected window.
+n           Change to the next window.
+o           Select the next pane in the current window.
+p           Change to the previous window.
+q           Briefly display pane indexes.
+r           Force redraw of the attached client.
+s           Select a new session for the attached client interactively.
+t           Show the time.
+w           Choose the current window interactively.
+x           Kill the current pane.
+{           Swap the current pane with the previous pane.
+}           Swap the current pane with the next pane.
+~           Show previous messages from tmux, if any.
+Page Up     Enter copy mode and scroll one page up.
+Up, Down
+Left, Right
+Change to the pane above, below, to the left, or to the right of the current pane.
+M-1 to M-5  Arrange panes in one of the five preset layouts: even-horizontal, even-vertical, main-horizontal, main-vertical, or tiled.
+M-n         Move to the next window with a bell or activity marker.
+M-o         Rotate the panes in the current window backwards.
+M-p         Move to the previous window with a bell or activity marker.
+C-Up, C-Down
+C-Left, C-Right
+Resize the current pane in steps of one cell.
+M-Up, M-Down
+M-Left, M-Right
+Resize the current pane in steps of five cells.</code></pre>
+  </div>
+
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+		  <li><a href="/review-yubikey-lets-get-obscure-with-otp">[Review] Yubikey - Let's get obscure with otp <i>(December 22, 2011)</i></a></li>
+		  
+		  <li><a href="/boot-isos-with-grub-2">Boot iso's with grub 2 <i>(January 17, 2011)</i></a></li>
+		  
+		  <li><a href="/tutorial-openvz-debian-zenoss-monitor-your-world">[Tutorial] OpenVZ - Debian - Zenoss (monitor your world) <i>(October 08, 2010)</i></a></li>
+		  
+		  <li><a href="/flickr-in-linux">Flickr with Linux <i>(October 15, 2009)</i></a></li>
+		  
+		  <li><a href="/zfs-pool-setup-configure">ZFS Pool (Setup &amp; Configure) <i>(November 21, 2009)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/jailbreak-your-kindle-3-2-1-also" title="Jailbreak your Kindle 3 (2 &amp; 1 also)">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/potw-bwm-hg" title="[PotW] bwm-hg">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>13 October 2010</span></div>
+
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '515 http://fsk141.com/?p=515';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

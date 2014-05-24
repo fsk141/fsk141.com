@@ -1,0 +1,24 @@
+---
+date: '2009-02-27 00:00:00'
+layout: post
+slug: vim-tabs
+status: publish
+title: Vim Tabs
+wordpress_id: '33'
+categories:
+- Linux
+tags:
+- Linux
+---
+
+I just found out something really neat via one of my new favorite sites: [Command-line-fu](http://www.commandlinefu.com)
+
+http://www.commandlinefu.com/commands/view/1256/vim-edit-in-tabs
+
+
+
+I made a little video to show off vim tabs in action^^
+Basic things to remember :tabn & :tabp
+
+Also check out linux.com entry for vimtabs:
+[http://www.linux.com/feature/59533](http://www.linux.com/feature/59533)

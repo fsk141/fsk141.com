@@ -1,0 +1,246 @@
+
+
+<!DOCTYPE html>
+
+<!-- START Everything -->
+
+<html dir="ltr" lang="en-US">
+
+<!-- Head -->
+<head> 
+	<!-- Meta -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<!-- Title -->
+	<title> Fsk141 | Page not found </title>
+
+	<!-- Font -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="http://fsk141.com/wp-content/themes/cleanSlice/style.css" type="text/css" media="screen, projection" />
+
+	<!-- comment-reply -->
+		
+	<!-- Feeds are automatically handled with add_theme_support('automatic-feed-links'); in include/functions/core.php -->	
+
+	<!-- HTML5 IE compatibility -->
+        <!--[if lt IE 9]>
+                <script src="http://fsk141.com/wp-content/themes/cleanSlice/include/js/html5.js"></script>
+        <![endif]-->
+
+	<link rel="alternate" type="application/rss+xml" title="Fsk141 &raquo; Feed" href="http://fsk141.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="Fsk141 &raquo; Comments Feed" href="http://fsk141.com/comments/feed" />
+				
+	<script type="text/javascript">//<![CDATA[
+	// Google Analytics for WordPress by Yoast v4.2.3 | http://yoast.com/wordpress/google-analytics/
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount','UA-3589342-1']);
+	_gaq.push(['_trackPageview','/404.html?page=' + document.location.pathname + document.location.search + '&from=' + document.referrer]);
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	//]]></script>
+<link rel='stylesheet' id='contact-form-7-css'  href='http://fsk141.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='lastfm_tabs_mosaic-css'  href='http://fsk141.com/wp-content/plugins/lastfm-tabs/css/lastfm_tabs.css?ver=1.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='webphysiology_single_portfolio-css'  href='http://fsk141.com/wp-content/plugins/webphysiology-portfolio/css/portfolio_single.css?ver=3.4.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://fsk141.com/wp-includes/js/jquery/jquery.js?ver=1.7.2'></script>
+<script type='text/javascript' src='http://fsk141.com/wp-content/plugins/lastfm-tabs/js/idtab.js?ver=2.2'></script>
+<script type='text/javascript' src='http://fsk141.com/wp-content/plugins/lastfm-tabs/js/mosaic.min.js?ver=1.0.1'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://fsk141.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://fsk141.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.4.1" />
+		<script type="text/javascript">
+			jQuery(function(){
+				jQuery('.lastfm_record').mosaic({
+					animation	: 'slide',
+					speed		: 150,
+					anchor_y : 'bottom'				});
+			});	
+		</script>
+	<meta id="syntaxhighlighteranchor" name="syntaxhighlighter-version" content="3.1.3" />
+
+<!-- END Head -->
+</head>
+
+<!-- Body -->
+<body class="error404">
+
+	<!-- #container -->
+	<div id="container">
+
+			<!-- #top -->
+			
+<!-- #top -->
+	<header id="top">
+
+	<!-- #logo -->
+	<div id="logo">
+		<h1><a href="http://fsk141.com">Fsk141</a></h1>
+	</div>
+
+	<!-- #tagline -->
+	<div id="tagline">Rawr!!!</div>
+
+	<!-- #topnav -->
+	<nav id="topnav">
+		<div class="menu"><ul><li ><a href="http://fsk141.com/" title="Home">Home</a></li><li class="page_item page-item-58"><a href="http://fsk141.com/portfolio">Portfolio</a></li><li class="page_item page-item-489"><a href="http://fsk141.com/software">Software</a></li><li class="page_item page-item-59"><a href="http://fsk141.com/about">About Me</a></li><li class="page_item page-item-57"><a href="http://fsk141.com/contact">Contact</a></li></ul></div>
+	</nav>
+
+	<!-- #search -->
+	<div id="search">
+		<form role="search" method="get" id="searchform" action="http://fsk141.com/" >
+	<div><label class="screen-reader-text" for="s">Search for:</label>
+	<input type="text" value="" name="s" id="s" />
+	<input type="submit" id="searchsubmit" value="Search" />
+	</div>
+	</form>	</div>
+
+<!-- END #top -->
+</header>
+
+		<!-- #middle -->
+		<div id="middle">
+
+			<!-- #left -->
+			
+<div id="left">
+	</div>
+
+			<!-- #right -->
+			
+<div id="right">
+	<div class="rightwidget"><h2 class="widgettitle">/me elsewhere</h2>			<div class="textwidget"><ul>
+<li>
+<a href="http://twitter.com/fsk141" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://twitter.com']);">@fsk141</a>
+</li>
+<li>
+<a href="http://flickr.com/photos/fsk141" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://flickr.com']);">Flickr</a>
+</li>
+<li>
+<a href="http://github.org/fsk141" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://github.org']);">Github</a>
+</li>
+<li>
+<a href="http://www.reddit.com/user/fsk141" onclick="javascript:_gaq.push(['_trackEvent','outbound-widget','http://www.reddit.com']);">Reddit</a>
+</li>
+<li>
+<a href="www.last.fm/user/fsk141">Last.fm</a>
+</li>
+
+</ul></div>
+		</div><div class="rightwidget"><h2 class="widgettitle">Last.fm</h2>
+<div id="lastfmrecords"><ul class="idTabs molastfm clearfix"><li><a href="#lastfmcovers">Recently played</a></li></ul>
+<ul id="lastfm_inside"><li class="records_tab" id="lastfmcovers"><div class="lastfm_record">
+									<a class="mosaic-overlay slide bottom" href="http://www.last.fm/music/Charles+Mingus/_/Moanin'" target="_blank" title="Charles Mingus">
+										<div class="details">
+											<p>Moanin'</p>
+											<p>Charles Mingus</p>
+										</div>
+									</a>
+									<a href="http://www.last.fm/music/Charles+Mingus/_/Moanin'" target="_blank">
+										<img src="http://userserve-ak.last.fm/serve/126/8634541.jpg" alt="Moanin'" title="Charles Mingus - Moanin'"/>
+									</a>
+								</div>
+</li>
+</ul></div></div>
+<div class="rightwidget"><h2 class="widgettitle">Categories</h2>		<ul>
+	<li class="cat-item cat-item-189"><a href="http://fsk141.com/category/acoustics" title="View all posts filed under Acoustics">Acoustics</a> (2)
+</li>
+	<li class="cat-item cat-item-3"><a href="http://fsk141.com/category/fsk141" title="View all posts filed under fsk141">fsk141</a> (14)
+</li>
+	<li class="cat-item cat-item-188"><a href="http://fsk141.com/category/fsk141-framework" title="View all posts filed under Fsk141-Framework">Fsk141-Framework</a> (2)
+</li>
+	<li class="cat-item cat-item-4"><a href="http://fsk141.com/category/hardware" title="View all posts filed under Hardware">Hardware</a> (7)
+</li>
+	<li class="cat-item cat-item-13"><a href="http://fsk141.com/category/software/homebrew" title="Scripts I made!">Homebrew</a> (4)
+</li>
+	<li class="cat-item cat-item-14"><a href="http://fsk141.com/category/networking/ipv6" title="View all posts filed under IPv6">IPv6</a> (1)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://fsk141.com/category/kindle" title="View all posts filed under Kindle">Kindle</a> (2)
+</li>
+	<li class="cat-item cat-item-15"><a href="http://fsk141.com/category/oss/linux" title="View all posts filed under Linux">Linux</a> (49)
+</li>
+	<li class="cat-item cat-item-16"><a href="http://fsk141.com/category/oss/mac" title="View all posts filed under Mac">Mac</a> (4)
+</li>
+	<li class="cat-item cat-item-6"><a href="http://fsk141.com/category/networking" title="View all posts filed under Networking">Networking</a> (8)
+</li>
+	<li class="cat-item cat-item-17"><a href="http://fsk141.com/category/oss/opensolaris" title="View all posts filed under Opensolaris">Opensolaris</a> (12)
+</li>
+	<li class="cat-item cat-item-7"><a href="http://fsk141.com/category/oss" title="Operating Systems">OS&#039;s</a> (40)
+</li>
+	<li class="cat-item cat-item-8"><a href="http://fsk141.com/category/photography" title="View all posts filed under Photography">Photography</a> (1)
+</li>
+	<li class="cat-item cat-item-18"><a href="http://fsk141.com/category/software/program-of-the-week" title="View all posts filed under Program of the Week">Program of the Week</a> (3)
+</li>
+	<li class="cat-item cat-item-19"><a href="http://fsk141.com/category/software/programming-software" title="View all posts filed under Programming">Programming</a> (9)
+</li>
+	<li class="cat-item cat-item-9"><a href="http://fsk141.com/category/reviews" title="View all posts filed under Reviews">Reviews</a> (5)
+</li>
+	<li class="cat-item cat-item-190"><a href="http://fsk141.com/category/acoustics/shannon-starrs" title="View all posts filed under Shannon Starrs">Shannon Starrs</a> (1)
+</li>
+	<li class="cat-item cat-item-10"><a href="http://fsk141.com/category/software" title="View all posts filed under Software">Software</a> (18)
+</li>
+	<li class="cat-item cat-item-11"><a href="http://fsk141.com/category/tutorials" title="View all posts filed under Tutorials">Tutorials</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="http://fsk141.com/category/uncategorized" title="View all posts filed under Uncategorized">Uncategorized</a> (4)
+</li>
+	<li class="cat-item cat-item-20"><a href="http://fsk141.com/category/oss/opensolaris/zfs" title="ZFS, the ultimate File System!">ZFS</a> (2)
+</li>
+		</ul>
+</div></div>
+
+			<!-- faux loop -->	
+			<div id="loop">
+				<div class="title"><b>You failed to search for something that actually exists.
+					<br />How bout you check out some recent posts.</b></div>
+				<div class="text_chunk">
+			
+					<!-- Show Recent posts -->
+							<div class="widget widget_recent_entries">		<h2 class="widgettitle">Recent Posts</h2>		<ul>
+				<li><a href="http://fsk141.com/the-playful-side-of-ls" title="The playful side of ls">The playful side of ls</a></li>
+				<li><a href="http://fsk141.com/me-learns-dvorak" title="/me learns dvorak">/me learns dvorak</a></li>
+				<li><a href="http://fsk141.com/rtorrent-the-complete-guide" title="rTorrent &#8212; The complete guide">rTorrent &#8212; The complete guide</a></li>
+				<li><a href="http://fsk141.com/what-is-min_peers-for-and-why-should-i-uncomment-it" title="[rTorrent] What is min_peers for, and why Should I Uncomment it?">[rTorrent] What is min_peers for, and why Should I Uncomment it?</a></li>
+				<li><a href="http://fsk141.com/review-yubikey-lets-get-obscure-with-otp" title="[Review] Yubikey &#8211; Let&#8217;s get obscure with otp">[Review] Yubikey &#8211; Let&#8217;s get obscure with otp</a></li>
+				<li><a href="http://fsk141.com/dwm-colors" title="Dwm Colors">Dwm Colors</a></li>
+				<li><a href="http://fsk141.com/muttdate-aka-mutt-update" title="Muttdate (aka Mutt Update)">Muttdate (aka Mutt Update)</a></li>
+				<li><a href="http://fsk141.com/alsaequal-for-when-you-need-tailored-audio-response" title="Alsaequal for When you Need Tailored Audio Response">Alsaequal for When you Need Tailored Audio Response</a></li>
+				<li><a href="http://fsk141.com/punch-a-useful-feature-into-todo-txt" title="`Punch` a Useful Feature Into todo.txt">`Punch` a Useful Feature Into todo.txt</a></li>
+				<li><a href="http://fsk141.com/boot-usb-drives-in-virtualbox" title="Boot USB Drives in VirtualBox">Boot USB Drives in VirtualBox</a></li>
+				</ul>
+		</div>				</div>
+
+		<!-- END #middle -->			
+		</div>
+		
+		<!-- #footer -->
+		
+<footer id="footer">
+	
+<div id="bottom">
+	</div>
+
+<div class="powered">
+Powered by 
+<a onclick="target='_blank';" href="http://www.fsk141.com/blog/fsk141-framework">Fsk141 Framework</a>
+</div>
+
+</footer>
+
+	<!-- END #container -->
+	</div>
+
+<!-- END body -->
+</body>
+
+<!-- END Everything -->
+<script type='text/javascript' src='http://fsk141.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.js?ver=3.09'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var _wpcf7 = {"loaderUrl":"http:\/\/fsk141.com\/wp-content\/plugins\/contact-form-7\/images\/ajax-loader.gif","sending":"Sending ..."};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://fsk141.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=3.2'></script>
+</html>

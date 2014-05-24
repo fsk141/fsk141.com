@@ -1,0 +1,48 @@
+---
+date: '2010-01-28 21:45:46'
+layout: post
+slug: pogoplug
+status: publish
+title: Pogoplug
+wordpress_id: '247'
+categories:
+- Networking
+---
+
+Well I took all the pictures for the pogoplug, and took a ton of screenshots of the web interface. Well about an hour into my unboxing I've rooted the device, changed the password, checked out the CPU spec, and am planning on oh so much more. I've been looking for a new hub to access my home network from far far away. Pogoplug you have been chosen for this task, do you accept? hehe. Anywho it's a basic linux distro based off ARM9:
+
+{% highlight bash %}
+-bash-3.2# cat /proc/cpuinfo 
+Processor       : ARM926EJ-S rev 1 (v5l)
+BogoMIPS        : 1192.75
+Features        : swp half thumb fastmult edsp 
+CPU implementer : 0x56
+CPU architecture: 5TE
+CPU variant     : 0x2
+CPU part        : 0x131
+CPU revision    : 1
+Cache type      : write-back
+Cache clean     : cp15 c7 ops
+Cache lockdown  : format C
+Cache format    : Harvard
+I size          : 16384
+I assoc         : 4
+I line length   : 32
+I sets          : 128
+D size          : 16384
+D assoc         : 4
+D line length   : 32
+D sets          : 128
+
+Hardware        : Feroceon-KW
+Revision        : 0000
+Serial          : 0000000000000000
+{% endhighlight %}
+
+Man I love this device so much already. The throughput seems a little sluggish in comparison to my FailNAS (long story) But that is a X86_64 PC with opensolaris (ZFS) and it does an amazing job at storing all my files.
+
+------
+
+For a preview the install was the simplest install of a network device that I've ever experienced. Followed by automatic encoding of my media files to allow for streaming via web/my motorola droid.
+
+I'll post the review after having some time to play with the device. Hopefully I don't brick it :)

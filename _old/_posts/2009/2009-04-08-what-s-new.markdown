@@ -1,0 +1,16 @@
+---
+date: '2009-04-08 00:00:00'
+layout: post
+slug: what-s-new
+status: publish
+title: What's new?
+wordpress_id: '19'
+categories:
+- Hardware
+tags:
+- handheld
+- Linux
+- n810
+---
+
+I would love to post some pictures of my new little toy (nokia n810) , but I'm too busy using it to type type this entry :) I've reprogrammed the darn thing over twenty times, and I've had it less than a week. I've flashed it with mer, poky, android, and of corse diablo. I'm probably not making much sense, but Im too lazy to post links atm. I plan on posting some pictures/videos of the device and how to flash. I just realized that I have a lot of new posts that I need to... um. post :)

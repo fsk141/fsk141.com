@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Kernel Compilation &amp; Arch Linux</title>
+		
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>Kernel Compilation &amp; Arch Linux <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p><a href="http://www.flickr.com/photos/68444690@N00/3401383387"><img src="http://farm4.static.flickr.com/3462/3401383387_1764c8e018.jpg" alt="" /></a></p>
+
+<p><strong>Summary:</strong></p>
+
+<p>A brief history of the infamous kernel. Followed by an in depth evaluation on the Arch Linux PKGBUILD of the stock kernel26. In that I’ll delve into the new outline of the PKGBUILD along with ways to customize (.config options, patches, how to prune for performance)</p>
+
+<p><strong>– What is a kernel? –</strong></p>
+
+<p>The kernel is the magical gateway that allows your hardware to communicate with applications. The kernel allows ‘User space’ to call system calls to the ‘Kernel space.’ Such as manipulating a file on a disk (open/close/read/write), or registering CPU commands. This being said the kernel is one of the lowest points of abstraction. It’s the crutch in which the whole of your computer is held up. The kernel manages resources such as CPU, memory, and I/O (disks, peripherals, displays, etc.). The kernel also allows for synchronization and communication between processes. (Inter-Process Communication). It also allows such processes a method to access the aforementioned hardware resources.</p>
+
+<p>The linux kernel is monolithic in nature, yet can be optimized with modules. Modules allow your kernel to be as small as you want, or easily expanded to include everything and the kitchen sink. It also allows you update modules; remove, update, reinsert, and be on your way again. More on modules to follow…</p>
+
+<p><em>– kernel26-2.6.28 (PKGBUILD) –</em></p>
+
+<p>Please usher in the all powerful PKGBUILD! (/me welcomes)</p>
+
+<p>Check out the the PKGBUILD in it’s entirety here:</p>
+
+<p><a href="http:http://repos.archlinux.org/wsvn/packages/kernel26/repos/core-x86_64/PKGBUILD//">http://repos.archlinux.org/wsvn/packages/kernel26/repos/core-x86_64/PKGBUILD</a></p>
+
+<p>And for all the other files hit them up on the svn:
+<a href="http://repos.archlinux.org/wsvn/packages/kernel26/repos/core-x86_64/http://">http://repos.archlinux.org/wsvn/packages/kernel26/repos/core-x86_64/</a></p>
+
+<p>For the article, the PKGBUILD will be broken into it’s multiple pieces, and given a little description.</p>
+
+<hr />
+<p>1) Common Head
+——</p>
+
+<pre><code>  1 # $Id$
+  2 # Maintainer: Tobias Powalowski 
+  3 # Maintainer: Thomas Baechler
+
+  4 pkgname=kernel26                # Build stock -ARCH kernel
+  5 # pkgname=kernel26-custom       # Build kernel with a different name
+  6 _kernelname=${pkgname#kernel26}
+  7 _basekernel=2.6.28
+  8 pkgver=${_basekernel}.7
+  9 pkgrel=2
+ 10 _patchname="patch-${pkgver}-${pkgrel}-ARCH"
+ 11 pkgdesc="The Linux Kernel and modules"
+ 12 arch=(i686 x86_64)
+ 13 license=('GPL2')
+ 14 groups=('base')
+ 15 url="http://www.kernel.org"
+ 16 backup=(etc/mkinitcpio.d/${pkgname}.preset)
+ 17 depends=('coreutils' 'kernel26-firmware&gt;=2.6.28' 'module-init-tools' 'mkinitcpio&gt;=0.5.20')
+ 18 # pwc, ieee80211 and hostap-driver26 modules are included in kernel26 now
+ 19 # nforce package support was abandoned by nvidia, kernel modules should cover everything now.
+ 20 # kernel24 support is dropped since glibc24
+ 21 replaces=('kernel24' 'kernel24-scsi' 'kernel26-scsi'
+ 22           'alsa-driver' 'ieee80211' 'hostap-driver26'
+ 23           'pwc' 'nforce' 'squashfs' 'unionfs' 'ivtv'
+ 24           'zd1211' 'kvm-modules' 'iwlwifi' 'rt2x00-cvs'
+ 25           'gspcav1' 'atl2' 'wlan-ng26')
+ 26 install=kernel26.install
+ 27 source=(ftp://ftp.kernel.org/pub/linux/kernel/v2.6/linux-$_basekernel.tar.bz2
+ 28         ftp://ftp.archlinux.org/other/kernel26/${_patchname}.bz2
+ 29         # the main kernel config files
+ 30         config config.x86_64
+ 31         # standard config files for mkinitcpio ramdisk
+ 32         kernel26.preset)
+ 33 optdepends=('crda: to set the correct wireless channels of your country')
+ 34 md5sums=('d351e44709c9810b85e29b877f50968a'
+ 35          'e535d668afb04a590f03a47356794579'
+ 36          '3c47674afeae26616acd9dfc4060bd02'
+ 37          '1f0005febea457f47f26af1726dbf1b2'
+ 38          '25584700a0a679542929c4bed31433b6')
+</code></pre>
+
+<hr />
+
+<p>Lets break this down into it’s relative pieces:
+4) pkgname (ie. pacman -S kernel26)</p>
+
+<p>6) _kernelname (uname -r)</p>
+
+<p>7) _basekernel (well kernel w/o patches [2.6.28])</p>
+
+<p>8) pkgver (kernel path version [2.6.28.7])</p>
+
+<p>17) depends (coreutils, module-init-tools, and mkinitcpio are necessary. More on kernel26-firmware later)</p>
+
+<p>26) install* (install file is crucial for mkinitcpio to execute correctly after your kernel has been properly compiled)</p>
+
+<p>Everything else should make sense in this part of the PKGBUILD. If you’re unfamiliar with any of the other variables I would peruse around the arch wiki, and read up on PKGBUILDS</p>
+
+<hr />
+<p>2) Make Chunk
+——</p>
+
+<p>The next section is where the magic happens. Lines 40-75 start out with a variable to choose the correct .config. Pretend you are your computer (metaphysically) and imagine what you would do if given the following commands. Realize that makepkg does a little magic in the background, yet most everything else is very straightforward.</p>
+
+<p>43) We dive into the extracted kernel directory extracted automagically by makepkg.</p>
+
+<p>46) This is a great place to put patches. More on patches in the next section of the article. After the patches have been applied (or discounted) we move onto configuring the kernel.</p>
+
+<p>Tobias/Thomas are nice and provide a preset .config for x86 &amp; x86_64 (how nice of them).</p>
+
+<p>48-52) determine the machine type and output the correct .config accordingly.</p>
+
+<p>53-55) Check to see if you have ‘_kernelname’ set, and if you do it will change the variable in your .config to match your custom name. ‘2.6.28-ARCH’ is the default for this field.</p>
+
+<p>57-75) Finishes the make. It grabs the correct name of the kernel and pops it into a nifty variable for use later (_kernver). What follows it is a nice block of commented code. The line that follows through just states that whatever the kernel has as defaults will be taken, and the build will commence. Later in the article we will take a look at how to make our own config, and strip out some on the un-necessary things in the kernel. After the config is taken care of, makepkg procedes to build the bzImage (boot image), and the rest of the kernel (modules and stuff)</p>
+
+<hr />
+
+<pre><code> 40 build() {
+ 41   KARCH=x86
+ 42
+ 43   cd ${srcdir}/linux-$_basekernel
+ 44   # Add -ARCH patches
+ 45   # See http://projects.archlinux.org/git/?p=linux-2.6-ARCH.git;a=summary
+ 46   patch -Np1 -i ${srcdir}/${_patchname} || return 1
+ 47
+ 48   if [ "$CARCH" = "x86_64" ]; then
+ 49     cat ../config.x86_64 &gt;./.config
+ 50   else
+ 51     cat ../config &gt;./.config
+ 52   fi
+ 53   if [ "${_kernelname}" != "" ]; then
+ 54     sed -i "s|CONFIG_LOCALVERSION=.*|CONFIG_LOCALVERSION="${_kernelname}"|g" ./.config
+ 55   fi
+ 56   # get kernel version
+ 57   make prepare
+ 58   _kernver="$(make kernelrelease)"
+ 59   # load configuration
+ 60   # Configure the kernel. Replace the line below with one of your choice.
+ 61   #make menuconfig # CLI menu for configuration
+ 62   #make xconfig # X-based configuration
+ 63   #make oldconfig # using old config from previous kernel version
+ 64   # ... or manually edit .config
+ 65   ####################
+ 66   # stop here
+ 67   # this is useful to configure the kernel
+ 68   #msg "Stopping build"
+ 69   #return 1
+ 70   ####################
+ 71   yes "" | make config
+ 72   # build!
+ 73   make bzImage modules || return 1
+ 74   mkdir -p ${pkgdir}/{lib/modules,boot}
+ 75   make INSTALL_MOD_PATH=${pkgdir} modules_install || return 1
+</code></pre>
+
+<hr />
+<p>3) The rest
+——</p>
+
+<p>76-153) I will refrain from pasting this part of the PKGBUILD. A brief summary of what happens is this:</p>
+
+<ul>
+  <li>
+    <p>Files are copied from working directory to installdir ($pkgdir)</p>
+  </li>
+  <li>
+    <p>Miscellaneous files are copied from working dir to install dir.</p>
+  </li>
+</ul>
+
+<p>161-179) This is where we continue:</p>
+
+<hr />
+
+<pre><code>161   # install fallback mkinitcpio.conf file and preset file for kernel
+162   install -m644 -D ${srcdir}/kernel26.preset ${pkgdir}/etc/mkinitcpio.d/${pkgname}.preset || return 1
+163   # set correct depmod command for install
+164   sed 
+165     -e  "s/KERNEL_NAME=.*/KERNEL_NAME=${_kernelname}/g" 
+166     -e  "s/KERNEL_VERSION=.*/KERNEL_VERSION=${_kernver}/g" 
+167     -i $startdir/kernel26.install
+168   sed 
+169     -e "s|source .*|source /etc/mkinitcpio.d/kernel26${_kernelname}.kver|g" 
+170     -e "s|default_image=.*|default_image="/boot/${pkgname}.img"|g" 
+171     -e
+"s|fallback_image=.*|fallback_image="/boot/${pkgname}-fallback.img"|g" 
+172     -i ${pkgdir}/etc/mkinitcpio.d/${pkgname}.preset
+173
+174   echo -e "# DO NOT EDIT THIS FILEnALL_kver='${_kernver}'" &gt; ${startdir}/pkg/etc/mkinitcpio.d/${pkgname}.kver
+175   # remove unneeded architectures
+176   rm -rf ${pkgdir}/usr/src/linux-${_kernver}/arch/{alpha,arm,arm26,avr32,blackfin,cris,frv,h8300,ia64,m32r,m68k,m68knommu,mips,mn10300,parisc,powerpc,ppc,s
+390,sh,sh64,sparc,sparc64,um,v850,xtensa}
+177   # remove the firmware
+178   rm -rf ${pkgdir}/lib/firmware
+179 }
+</code></pre>
+
+<hr />
+
+<p>162) Copies *.preset file (mkinitcpio vars) into install dir. To backstep a little, just in case your unsure what I mean by installdir. Makepkg works with two directories: pkg &amp; src. src is where the package is extracted and compiled. Durring the compile you can specify to compile to the pkg dir, or copy the files over after you have finished your compile (ie. binaries)</p>
+
+<p>164-167) Posts correct variables into your *.install file (uses a simple sed find and replace)</p>
+
+<p>168-172) Pops correct vars into *.preset</p>
+
+<p>174) This is the one line not to screw around with. It creates a .kver file to let mkinitcpio what kernel it’s compiling.</p>
+
+<p>176) Removes erroneous directories</p>
+
+<p>178) I would remove this like if you plan to compile your own kernel. Just leave the firmware in place…</p>
+
+<hr />
+
+<p><strong>– Patches –</strong></p>
+
+<p>Definitely take a peek at:
+<a href="http://wiki.archlinux.org/index.php/Kernel_Patches_and_Patchsets">http://wiki.archlinux.org/index.php/Kernel_Patches_and_Patchsets</a></p>
+
+<p>This gives a great rundown on patches &amp; patchsets ;)</p>
+
+<p>Other than that, patches are for the tweakers at heart. If you would like to get a fraction more performance benefit then run with patches as opposed to attaching modules. Depending on what you want you might want to patch in the newest version of ext4. Or the latest version of OpenVZ. Or if you would really like to explore, dive into DRBD…</p>
+
+<p><strong>– Modules –</strong></p>
+
+<p>Hooray, Modules! Modules are the easiest way to add functionality to a kernel. Not only do modules reduce the bloat of a once monolithic kernel. They also make it simple to upgrade seperate pieces of the kernel without restarting, or reloading a new kernel. There are certain limits, but they are far and wide, and when you run into one, it’s simple to restart with a new kernel :)</p>
+
+<hr />
+<p>/etc/rc.conf
+——</p>
+
+<pre><code>MODULES=(!pcspkr r8169 slhc snd-mixer-oss snd-pcm-oss snd-hwdep
+snd-page-alloc snd-pcm snd-timer snd snd-hda-intel soundcore nfs)
+</code></pre>
+
+<hr />
+
+<p>This is my modules line on my desktop. It’s very simple. The pcsprk is disabled (!), and for the most part the rest of the things loaded are sound drivers.</p>
+
+<p>That’s not to say that I don’t have more modules running. To check the currently running modules on your system run the ‘lsmod’ command. The output will look something similar to this:</p>
+
+<hr />
+
+<pre><code>[fsk141@FSK-Main ~]$ lsmod | more
+Module                  Size  Used by
+battery                14600  0
+nls_cp437               8960  1
+vfat                   14464  1
+fat                    56760  1 vfat
+usb_storage           112832  1
+ipv6                  309952  32
+</code></pre>
+
+<hr />
+
+<p>Hum, battery on a desktop? How absurd, well let’s make sure that it’s not a cmos battery, or anything else important with ‘modinfo’:</p>
+
+<hr />
+
+<pre><code>[fsk141@FSK-Main ~]$ modinfo battery
+filename:       /lib/modules/2.6.28-ARCH/kernel/drivers/acpi/battery.ko
+license:        GPL
+description:    ACPI Battery Driver
+author:         Alexey Starikovskiy 
+author:         Paul Diefenbaugh
+alias:          acpi*:PNP0C0A:*
+depends:
+vermagic:       2.6.28-ARCH SMP preempt mod_unload
+parm:           cache_time:cache time in milliseconds (uint)
+</code></pre>
+
+<hr />
+
+<p>Well, I don’t need ACPI on my desktop, so lets remove it with ‘modprobe -r battery’ You need to run this as root or under sudo… By “removing it” it will remove it from the kernel. Likewise if you were to execute ‘modprobe battery’ it would insert the module.</p>
+
+<p><strong>– Compiling &amp; Tweaking–</strong></p>
+
+<p>To wrap things up lets go through a hypothetical scenario.</p>
+
+<p>1) You edit your PKGBUILD and add the Viper Patchset (Best wishes to the late Vipercinus)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>2) You replace ‘yes “”</td>
+      <td>makeconfig’ with ‘make menuconfig’ (Remove erroneous options, and modules) If you are unsure what something is, then pull up a trusty google page and look it up. For example if you use ext3 as your primary filesystem, then consider removing EXT2, EXT4, XFS, Reiser FS, etc. You might be suprised on how you can cut some time off boot by simply removing pieces from your kernel. (Leave the important stuff, otherwise you’ll just end up with a useless pile of compiled junk)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>3) ‘makepkg’ finishes, and you proceded to ‘ls /boot/’ and make sure that your mkinitcpio images were successfully created</p>
+
+<p>4) Add a Grub entry:</p>
+
+<hr />
+
+<pre><code>title  Arch Linux
+root   (hd0,0)
+kernel /boot/vmlinuz26-custom
+root=/dev/sda1 ro
+initrd /boot/kernel26-custom.img
+</code></pre>
+
+<hr />
+
+<p>5) Reboot and cross your fingers. If it reboots, and spits you back into a prompt then you’re golden. Otherwise you will need to troubleshoot what you did wrong, or how you mucked things up.</p>
+
+<hr />
+
+<p><strong>Conclusion:</strong></p>
+
+<p>I wish you the best of luck with your kernel adventures, and Arch Linux in general. The process of building a kernel takes a lot of time to master, and is a very complicated affair. It’s wonderful that the PKGBUILD is able to structure the process so nicely, and allow you create a package with a full kernel, and the instructions to run mkinitcpio, and create the correct boot images. I recommend trying out a couple different patchsets, and trying your hand at making a PKGBUILD of your own kernel. At the very least grab the default kernel, and compile it yourself to see what happens. I can recall the first time I compiled a program, and how confused yet joyous I was. I knew I did something, but I had no idea what that something amounted to. Now after compiling too many programs/kernels to count I look back, and recall the time I had learning. It was troublesome, and there weren’t many resources that were able to help/step you through the whole process. I know that this isn’t an all telling guide for kernel compiling. At the very least, I hope this peaks you interest to learn more.</p>
+
+<p>Enjoy, Jonny Gerold (jonny@fsk141.com)</p>
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/review-noctua-nf-p14-flx">[Review] Noctua NF-P14 FLX <i>(December 21, 2010)</i></a></li>
+		  
+		  <li><a href="/flickr-in-linux">Flickr with Linux <i>(October 15, 2009)</i></a></li>
+		  
+		  <li><a href="/arch-linux-on-imac-arch-only">Arch Linux on iMac [Arch Only] <i>(September 21, 2010)</i></a></li>
+		  
+		  <li><a href="/centos-2-6-24-i686pae-openvz-ovz006-5-ibcs-3-7-drbd-8-3-0-rc2">CentOS 2.6.24 (i686PAE) | OpenVZ ovz006.5 | DRBD 8.3.0 | IBCS 3.7 <i>(December 11, 2008)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+		  <li><a href="/slow-zfs-zpool">Slow ZFS zpool? <i>(October 06, 2010)</i></a></li>
+		  
+		  <li><a href="/how-to-properly-use-sudo">sudo (brief history -- &amp; installation) -- Part one of multipart series <i>(October 25, 2011)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/i-just-love-ramdisks" title="I just love ramdisks">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/eyeos-impressions-pkgbuild" title="eyeOS impressions &amp; PKGBUILD">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>31 March 2009</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#Arch Linux-ref">Arch Linux <span>10</span></a></li>
+     
+    	<li><a href="/tags.html#kernel-ref">kernel <span>5</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '22 http://fsk141.com/?p=22';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

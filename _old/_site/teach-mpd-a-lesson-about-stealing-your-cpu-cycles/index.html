@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Teach mpd a lesson about stealing your CPU cycles</title>
+		
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>Teach mpd a lesson about stealing your CPU cycles <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>MPD by default is setup to use whatever it can output to (audio wise), even though such sources might be very inefficient. I was noticing that mpd was using upwards of 30% of my dual core CPU, and it got me to googling for an answer. Well after reading up on mpd configuration tweaks: <a href="http://mpd.wikia.com/wiki/Tuning">http://mpd.wikia.com/wiki/Tuning</a> I got my configuration file to use alsa, and now I’m seeing 1-3% cpu usage from mpd most the time it’s off the radar completely.</p>
+
+<p>I’ve posted my whole mpd.conf below, yet the information I modified was the ‘audio_output bit.</p>
+
+<pre><code># See the mpd.conf man page for a more detailed description of each parameter.
+
+music_directory         "~/music"
+#playlist_directory "/var/lib/mpd/playlists"
+db_file "~/.mpd/mpd.db"
+log_file "~/.mpd/mpd.log"
+pid_file "~/.mpd/mpd.pid"
+state_file "~/.mpd/mpdstate"
+#
+user "fsk141"
+#
+audio_output {
+type            "alsa"
+name            "My ALSA Device"
+#       auto_resampler "no"
+#       format          "44100:16:2"    # optional
+mixer_device    "default"       # optional
+mixer_control   "Master"        # optional
+#       mixer_index     "0"             # optional
+options         "dev=dmixer"
+device          "plug:dmix"
+
+}
+</code></pre>
+
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/alsaequal-for-when-you-need-tailored-audio-response">Alsaequal for When you Need Tailored Audio Response <i>(November 09, 2011)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+		  <li><a href="/zfs-pool-setup-configure">ZFS Pool (Setup &amp; Configure) <i>(November 21, 2009)</i></a></li>
+		  
+		  <li><a href="/arch-linux-on-imac-arch-only">Arch Linux on iMac [Arch Only] <i>(September 21, 2010)</i></a></li>
+		  
+		  <li><a href="/review-yubikey-lets-get-obscure-with-otp">[Review] Yubikey - Let's get obscure with otp <i>(December 22, 2011)</i></a></li>
+		  
+		  <li><a href="/review-noctua-nf-p14-flx">[Review] Noctua NF-P14 FLX <i>(December 21, 2010)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/image-organization-in-n-out-nas" title="Image Organization | In-N-Out NAS">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/the-quest-for-the-perfect-panel" title="The quest for the perfect panel">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>07 October 2009</span></div>
+
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '110 http://fsk141.com/?p=110';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

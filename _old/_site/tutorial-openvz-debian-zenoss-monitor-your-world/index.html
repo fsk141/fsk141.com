@@ -1,0 +1,451 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>[Tutorial] OpenVZ - Debian - Zenoss (monitor your world)</title>
+		
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>[Tutorial] OpenVZ - Debian - Zenoss (monitor your world) <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p><a href="http://www.flickr.com/photos/68444690@N00/5063551922/"><img src="http://farm5.static.flickr.com/4105/5063551922_209885c7ce_o.png" alt="openvz-debian-zenoss" /></a></p>
+
+<p>Do you have an OpenVZ HN (Host Node) &amp; have no idea what’s happening with your nodes? Well get out of the dark ages &amp; add a <a href="http://community.zenoss.org">Zenoss</a> installation to monitor your VE’s (Virtual Environments). Why did I choose debian when zenoss supports a bunch of distros? Well there are repos for debian/ubuntu (which will auto-setup for the most part), and I’m not a fan of ubuntu. Thus we’ll use debian. The whole setup only takes a few minutes, so lets jump right in…</p>
+
+<p><strong>1)</strong> <em>Make a new VE with Debian 5:</em></p>
+
+<div>
+    <pre><code class="bash"># On your HN run:
+
+# Download the debian 5 template
+sudo wget -c http://download.openvz.org/template/precreated/debian-5.0-x86_64.tar.gz -o /vz/template/cache/debian-5.0-x86_64.tar.gz
+
+# Create debian VE
+sudo vzctl create 1 --ostemplate debian-5.0-x86_64
+
+# Hooray your VE is setup, now move onto configuration &gt;&gt;</code></pre>
+  </div>
+
+<p><strong>2)</strong> <em>Set VE options:</em></p>
+
+<div>
+    <pre><code class="bash"># Configure debian VE (naibed-zen is debian backwards with a lil zen added)
+# You can enter this all on one line, I just spread it out to make it easier to read
+sudo vzctl set 1 
+--hostname naibed-zen 
+--ipadd &lt;ipaddress&gt; 
+--searchdomain &lt;yoursearchdomain&gt; 
+--nameserver &quot;&lt;your nameserver/nameservers (separated by spaces)&gt; 
+--vmguarpages $((256 * 4096)) 
+--privvmpages $((256 * 6144)) 
+--swappages $((256 * 1024)) 
+--meminfo none 
+--onboot yes 
+--save
+
+#--vmguarpages $((256 * 4096)) # guaranteed memory (4GB)
+#--privvmpages $((256 * 6144)) # burst memory (6GB)
+#--swappages $((256 * 1024)) # swap memory
+#--meminfo none # I was having memory listing issues, and this fixed it</code></pre>
+  </div>
+
+<p>This will configure the empty shell of a VE that we setup &amp; make is more usable:</p>
+
+<p><strong>VEID:</strong> (Virtual Environment ID) == 1 in our case, but you can set it to whatever you want
+<strong>Hostname:</strong> naibed-zen
+<strong>IP Address:</strong> (eg. 192.168.1.2)
+<strong>Search Domain</strong> (/etc/resolv.conf): (eg. google.com *this is optional)
+<strong>Nameserver(s)</strong> (/etc/resolv.conf): (eg. 192.168.1.1)
+<strong>Guaranteed Memory:</strong> (change the last number, 4096 == 4GB)
+<strong>Burst Memory:</strong> (change the last number, 6144 == 6GB)
+<strong>Turn on at boot:</strong> yes
+<strong>Don’t forget to save:</strong> if you don’t –save then your HN won’t remember the settings when rebooted</p>
+
+<p>If I were you I would enter the VE (sudo vzctl enter 1) &amp;&amp; test to make sure networking is working… ping google or something, if not, then make sure your HN is setup correctly &amp; that your dns servers are correct</p>
+
+<p><strong>3)</strong> <em>Setup Zenoss:</em></p>
+
+<p>Now that we have our VE all ready to go, lets setup zenoss…</p>
+
+<div>
+    <pre><code class="bash"># Enter the VE
+sudo vzctl enter 1
+echo &quot;deb http://dev.zenoss.org/deb main stable&quot; &gt;&gt; /etc/apt/sources.list
+apt-get update
+apt-get install zenoss-stack
+/etc/init.d/zenoss-stack start</code></pre>
+  </div>
+
+<p>It should look something like this:</p>
+
+<div>
+    <pre><code class="bash">$ sudo vzctl enter 2
+entered into CT 2
+naibed:/# echo &quot;deb http://dev.zenoss.org/deb main stable&quot; &gt;&gt; /etc/apt/sources.list
+naibed:/# apt-get update
+... updating pkg-database ...
+
+naibed:/# apt-cache search zenoss-stack # just verifying that the repo is correct
+zenoss-stack - Zenoss Stack with all requirements.
+
+naibed:/# apt-get install zenoss-stack
+Reading package lists... Done
+Building dependency tree... Done
+The following NEW packages will be installed:
+  zenoss-stack
+0 upgraded, 1 newly installed, 0 to remove and 14 not upgraded.
+Need to get 110MB of archives.
+After this operation, 386MB of additional disk space will be used.
+WARNING: The following packages cannot be authenticated!
+  zenoss-stack
+Install these packages without verification [y/N]? Y
+Get:1 http://dev.zenoss.org main/stable zenoss-stack 3.0.2-0 [110MB]
+Fetched 110MB in 11s (9756kB/s)
+Selecting previously deselected package zenoss-stack.
+(Reading database ... 23039 files and directories currently installed.)
+Unpacking zenoss-stack (from .../zenoss-stack_3.0.2-0_amd64.deb) ...
+Setting up zenoss-stack (3.0.2-0) ...
+
+naibed:/# /etc/init.d/zenoss-stack start
+nohup: redirecting stderr to stdout
+Starting mysqld.bin daemon with databases from /usr/local/zenoss/mysql/data
+/usr/local/zenoss/mysql/scripts/ctl.sh : mysql  started at port 3307
+Daemon: zeoctl .
+daemon process started, pid=2050
+Daemon: zopectl .
+daemon process started, pid=2061
+Daemon: zenhub starting...
+Daemon: zenjobs starting...
+Daemon: zenping starting...
+Daemon: zensyslog starting...
+Daemon: zenstatus starting...
+Daemon: zenactions starting...
+Daemon: zentrap starting...
+Daemon: zenmodeler starting...
+Daemon: zenperfsnmp starting...
+Daemon: zencommand starting...
+Daemon: zenprocess starting...
+Daemon: zenwin starting...
+Daemon: zeneventlog starting...
+naibed:/#
+
+# You&#39;re done, move onto testing &amp; pat yourself on the back</code></pre>
+  </div>
+
+<p><strong>4)</strong> <em>Test &amp; Enjoy:</em></p>
+
+<p>To test just go to a web browser &amp; enter the IP that you choose for the machine followed by <strong>:8080</strong> (eg. 192.168.1.2:8080) If everything went as expected you should be greeted with a zenoss setup page
+<a href="http://www.flickr.com/photos/68444690@N00/5063595990/"><img src="http://farm5.static.flickr.com/4090/5063595990_07aa576991.jpg" alt="Success" /></a></p>
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/tutorial-add-more-ram-to-an-openvz-container">[Tutorial] Add more RAM to an OpenVZ container <i>(October 07, 2010)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+		  <li><a href="/boot-isos-with-grub-2">Boot iso's with grub 2 <i>(January 17, 2011)</i></a></li>
+		  
+		  <li><a href="/run-a-full-bitcoin-node">Run A Full Bitcoin Node <i>(April 28, 2014)</i></a></li>
+		  
+		  <li><a href="/potw-tmux">[PotW] tmux <i>(October 13, 2010)</i></a></li>
+		  
+		  <li><a href="/slow-zfs-zpool">Slow ZFS zpool? <i>(October 06, 2010)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/tutorial-add-more-ram-to-an-openvz-container" title="[Tutorial] Add more RAM to an OpenVZ container">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/tutorial-how-to-unencrypt-kindle-books" title="[Tutorial] How to unencrypt kindle books">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>08 October 2010</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#debian-ref">debian <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Linux-ref">Linux <span>19</span></a></li>
+     
+    	<li><a href="/tags.html#OpenVZ-ref">OpenVZ <span>7</span></a></li>
+     
+    	<li><a href="/tags.html#zenoss-ref">zenoss <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '441 http://fsk141.com/?p=441';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

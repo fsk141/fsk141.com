@@ -1,0 +1,365 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>ZFS Dedup | OpenSolaris repos | beadm</title>
+		
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>ZFS Dedup | OpenSolaris repos | beadm <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>DEDUP IS AMAZING. Can’t wait to try it out, but I’m waiting for my system to upgrade from the dev repository, err, I might just hold off cause it’s taking forever. Maybe I’ll play with it in a VM, instead of my Home NAS :*
+Anywho please read up on it here: <a href="http://blogs.sun.com/bonwick/entry/zfs_dedup">http://blogs.sun.com/bonwick/entry/zfs_dedup</a></p>
+
+<p>It’s an amazing technology, and I’m super happy that it’s finally out.</p>
+
+<hr />
+
+<p>Just in case you want to upgrade 111b to 127, or just have the most up to date packages try the following:</p>
+
+<div>
+    <pre><code class="bash">pkg set-publisher -O http://pkg.opensolaris.org/dev &quot;opensolaris.dev&quot;
+pkg set-publisher -P opensolaris.dev</code></pre>
+  </div>
+
+<p>Now when you look at your repos, dev is default or ‘preferred’</p>
+
+<div>
+    <pre><code class="bash">fsk141@TrayNAS:/mnt$ pkg publisher
+PUBLISHER                             TYPE     STATUS   URI
+opensolaris.dev          (preferred)  origin   online   http://pkg.opensolaris.org/dev/
+opensolaris.org                       origin   online   http://pkg.opensolaris.org/release/</code></pre>
+  </div>
+
+<hr />
+
+<h2 id="as-i-work-with-opensolaris-i-am-continually-amazed-and-pissed-off-at-the-same-time-where-some-things-are-insanely-simple-and-straightforward-other-things-are-tedious-and-hard-because-of-my-linux-background-another-thing-that-i-am-letdown-is-the-lack-of-community-like-arch-linux-there-is-a-very-large-opensolaris-community-but-not-in-the-sense-of-packages-and-a-lot-is-left-to-you-as-in-manually-compile">As I work with OpenSolaris I am continually amazed, and pissed off at the same time. Where some things are insanely simple and straightforward. Other things are tedious, and hard because of my Linux background. Another thing that I am letdown is the lack of community like Arch Linux. There is a very large OpenSolaris community, but not in the sense of packages, and a lot is left to you (as in manually compile)</h2>
+
+<p>One of the difficult concepts to grasp is the boot environment concept. It’s kinda like a snapshot of sorts for your boot environment. Since OpenSolaris isn’t a rolling distro like Arch Linux, there are different revisions. Well instead of forcing some difficult reinstall you can simply ‘pkg image-update’ and upon your next reboot you have your new environment. You also have the ability to easily revert.</p>
+
+<div>
+    <pre><code class="bash">fsk141@TrayNAS:/mnt$ beadm list
+BE             Active Mountpoint Space   Policy Created
+--             ------ ---------- -----   ------ -------
+TrayNAS_Nov_21 -      -          304.15M static 2009-11-21 15:53
+opensolaris    -      -          7.57M   static 2009-10-16 08:19
+opensolaris-1  NR     /          3.62G   static 2009-11-22 01:44
+
+fsk141@TrayNAS:/mnt$ beadm destroy TrayNAS_Nov_21
+Are you sure you want to destroy TrayNAS_Nov_21? This action cannot be undone(y/[n]): y</code></pre>
+  </div>
+
+<p>beadm is a great tool to modify your BE, and I love the simplicity in the BE scheme.</p>
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/zfs-pool-setup-configure">ZFS Pool (Setup &amp; Configure) <i>(November 21, 2009)</i></a></li>
+		  
+		  <li><a href="/boot-isos-with-grub-2">Boot iso's with grub 2 <i>(January 17, 2011)</i></a></li>
+		  
+		  <li><a href="/dwm-colors">Dwm Colors <i>(November 14, 2011)</i></a></li>
+		  
+		  <li><a href="/slow-zfs-zpool">Slow ZFS zpool? <i>(October 06, 2010)</i></a></li>
+		  
+		  <li><a href="/review-noctua-nf-p14-flx">[Review] Noctua NF-P14 FLX <i>(December 21, 2010)</i></a></li>
+		  
+		  <li><a href="/review-yubikey-lets-get-obscure-with-otp">[Review] Yubikey - Let's get obscure with otp <i>(December 22, 2011)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/speed-up-open-solaris-boot-fix-slow-boot" title="Speed up Open Solaris Boot (Fix Slow Boot)">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/gani-network-driver" title="Gani Network Driver">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>22 November 2009</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#beadm-ref">beadm <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#dedup-ref">dedup <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#NAS-ref">NAS <span>4</span></a></li>
+     
+    	<li><a href="/tags.html#pkg repos-ref">pkg repos <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '200 http://fsk141.com/?p=200';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

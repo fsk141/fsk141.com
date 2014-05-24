@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>rTorrent -- The complete guide</title>
+		<meta name="description" content="Get ready for an adventure! This is one of the most comprehensive articles (or mini-tomes) I've written, covering rTorrent. I try to touch everything from just starting out, to some advanced tidbits to make torrenting easy, breazy and beautifully simple. I plan to make this into a distributable pdf or other portable format soon, so check back, I'll post the links near the top of the post. Please comment if you find any errors, have questions, or would like me to expand on anything. I would hope there aren't any glaring errors/typos, but at around 3000 words, this covers a lot, and I wouldn't be surprised if I oops'ed somewhere(s).">
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>rTorrent -- The complete guide <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p><a href="http://fsk141.com/uploads/2011/12/2011-12-24-161350_1280x800_scrot.png"><img src="http://fsk141.com/uploads/2011/12/2011-12-24-161350_1280x800_scrot-750x468.png" alt="" /></a></p>
+
+<!--
+History
+Installation
+Configuration (.rtorrent.rc)
+First Startup
+Keybindings
+Advanced Setup
+Resources Unused (comparison with transmission)
+-->
+
+<h2 id="intro">Intro</h2>
+
+<p>Get ready for an adventure! This is one of the most comprehensive articles (or mini-tomes) I’ve written, covering rTorrent. I try to touch everything from just starting out, to some advanced tidbits to make torrenting easy, breazy and beautifully simple. I plan to make this into a distributable pdf or other portable format soon, so check back, I’ll post the links near the top of the post. Please comment if you find any errors, have questions, or would like me to expand on anything. I would hope there aren’t any glaring errors/typos, but at around 3000 words, this covers a lot, and I wouldn’t be surprised if I oops’ed somewhere(s).</p>
+
+<h2 id="history">History</h2>
+
+<p>Lets start with a wee bit of history… The project was started up around 2004 (I know it was previous, but I can’t find an exact date).</p>
+
+<p>I base this off of Jari Sundell’s (Rakshasa) [creator of lib/rTorrent] note on the newly created mailing list testing its functionality:</p>
+
+<div>
+    <pre><code class="bash">Hello, anyone there?
+
+Rakshasa
+
+*meowrrr*
+&gt;&gt; http://rakshasa.no/pipermail/libtorrent-devel/2004-July/000000.html</code></pre>
+  </div>
+
+<p>At this time <strong>(Julyish - 2004) libtorrent (0.5.5)/rTorrent (0.1.5)</strong> was “working,” but still had a long way to go from where it is today.</p>
+
+<p>It’s subsequent <strong>0.6/0.2</strong> branch had a ton of bug fixes, an addition of a throttle’ing system, and separation of openssl due to ill-licensing.</p>
+
+<p><strong>0.7/0.3</strong> added in udp support, torrent preallocation, min_peers, code optimization, and the almighty fast resume.</p>
+
+<p><strong>0.8/0.4</strong> added new throttle implementation, global limits, proxy support, interface improvements, load, load_run, untied options (killer features), scheduling, session locking. So many wonderful things were added!</p>
+
+<p><strong>0.9/0.5</strong> was chock full of bugfixes / minor improvements, but also ipv6 support (this was in 2006 – eary adoption)</p>
+
+<p><strong>0.10/0.6 - current (0.12/0.8)</strong> had so many wonderful bug fixes &amp; additions, it’s not even worth going over them since they were all so useful to today’s end result of fantastic.</p>
+
+<h2 id="installation">Installation</h2>
+
+<div>
+    <pre><code class="bash"># you can compile from source (but I wouldn&#39;t suggest it
+## you can grab the stock rTorrent (Arch Linux)
+pacman -S rtorrent
+
+## or you can get rtorrent-extended (much better, supports colors &amp; all kinds of awesome)
+yaourt -S rtorrent-extended</code></pre>
+  </div>
+
+<h2 id="configuration-rtorrentrc">Configuration (.rtorrent.rc)</h2>
+
+<blockquote>
+  <p>Lets start by taking a look at my configuration:
+– I’ll reference bits of this throughout the article –
+– You can simply copypasta this into your ~/.rtorrent.rc &amp; edit to your liking –
+<a href="https://github.com/fsk141/dotfiles/blob/master/Hot/.rtorrent.rc">https://github.com/fsk141/dotfiles/blob/master/Hot/.rtorrent.rc</a></p>
+</blockquote>
+
+<div>
+    <pre><code class="bash">#
+# ~/.rtorrentrc
+#
+
+# Global upload and download rate in KiB. &quot;0&quot; for unlimited.
+download_rate = 1000
+upload_rate = 50
+
+min_peers = 50 ; look for more peers if limit doesn&#39;t reach 50
+max_peers = 500 ; if there are 500 peers, don&#39;t allow any more
+
+# Same as above but for seeding completed torrents (-1 = same as downloading)
+min_peers_seed = 10
+max_peers_seed = 100
+
+# Maximum number of simultanious uploads per torrent.
+max_uploads = 25
+
+port_range = 6881-6999 ; ports to use for listening
+
+# Start opening ports at a random position within the port range.
+port_random = yes 
+
+check_hash = yes ; check hash on finished torrents
+
+# encryption settings
+encryption = allow_incoming,enable_retry,prefer_plaintext
+
+use_udp_trackers = yes ; setup client to use udp (stateless) trackers
+
+# DHT clientless tracker
+dht = auto
+dht_port = 6881
+peer_exchange = yes
+
+# Session tmp file (relative dir is good, absolute is bad)
+session = ./Downloads/.session
+
+# Default directory to save the downloaded torrents.
+directory = ./Downloads/
+
+# Close torrents when diskspace is low.
+schedule = low_diskspace,5,60,close_low_diskspace=2048M
+
+# Watch a directory for new torrents, and stop those that have been deleted (^d)
+schedule = watch_directory,5,5,&quot;load_start=./Downloads/watch/*.torrent&quot;
+schedule = watch_directory_2,5,5,&quot;load_start=~/Downloads/watch/music/*.torrent,d.set_directory=~/Downloads/music/&quot;
+schedule = watch_directory_3,5,5,&quot;load_start=~/Downloads/watch/television/*.torrent,d.set_directory=~/Downloads/television/&quot;
+schedule = watch_directory_4,5,5,&quot;load_start=~/Downloads/watch/books/*.torrent,d.set_directory=~/Downloads/books/&quot;
+schedule = untied_directory,5,5,stop_untied= ; stop torrents once removed from the client
+
+# Colors # only in rtorrent extended
+## Colors: 0 = black 1 = red 2 = green 3 = yellow 4 = blue 5 = magenta 6 = cyan 7 = white
+
+done_fg_color = 6
+#done_bg_color
+active_fg_color = 7
+#active_bg_color</code></pre>
+  </div>
+
+<p>Configuring rTorrent, and any torrent client, can make or break your experience with torrenting. It’s very important to set throttleing, port forwarding, and peer settings specific to your network. I would start by navigating to <a href="http://speedtest.net">http://speedtest.net</a> and running a test to figure out your network speeds.</p>
+
+<p><a href="http://fsk141.com/uploads/2011/12/speedtest.png"><img src="http://fsk141.com/uploads/2011/12/speedtest.png" alt="" /></a></p>
+
+<blockquote>
+
+  <h3 id="throttleing">Throttleing</h3>
+
+  <p>After sizing up your network connection, you need to do a little math (or googleing). Speedtest.net gives you your networking potential in network terms (Mbps – Mega bits per second), yet you want to know KBps (Kilo Bytes per second)</p>
+</blockquote>
+
+<hr />
+<p>Quick lesson on bits vs Bytes:
+* There are 8 bits in a byte
+– <strong>networking (per second):</strong> bit/ps (1) &gt; kilobit/ps (1000) &gt; megabit/ps (1000000) &gt; gigabit &gt; terabit
+– <strong>filesystems:</strong> bit (1) &gt; Byte (8) &gt; kiloByte (1024) &gt; megaByte (1048576)&gt; gigaByte &gt; teraByte
+* Converting bits to Bytes:
+– 100kbps (100 kilo bits per second) = 100/8 (bits to Bytes) = 12.5 KBps (12.5 kilo bytes per second)
+– 1Mbps (1 Mega bit per second) = 1*1024/8 (converting Mbit &gt; KByte)
+——</p>
+
+<p>Easiest way to convert is to just use google calculator (16.35Mbps in KBps):
+<a href="http://fsk141.com/uploads/2011/12/google.png"><img src="http://fsk141.com/uploads/2011/12/google-750x164.png" alt="" /></a></p>
+
+<p>Now that you have your rate of bits in Bytes; we need to do a little more math.</p>
+
+<p>My general rule of thumb is to allocate a maximum of 75% network potential to torrenting, and to leave the other 25% for general web traffic (web browsing, youtubing, netflix). So if I have 2092KBps download bandwith I would like to give rTorrent about 1569 (2092<em>.75). And for upload potential 267.84 (357.12</em>.75).</p>
+
+<p>I scale back since there’s a lot of netflix going on, and set my max download rate to 1000KBps and my upload rate to 50KBps.</p>
+
+<div>
+    <pre><code class="bash"># Global upload and download rate in KiB. &quot;0&quot; for unlimited.
+download_rate = 1000
+upload_rate = 50</code></pre>
+  </div>
+
+<p>Other that setting a proper throttleing speed, it’s also necessary to set proper min/max_peer settings. According to the bittorrent spec, you should never have more than 5-10 torrents open at one time (unless you have a multi-Mbit connection). The reasoning behind this is that it hurts the network to have torrent clients taking up peer slots, and not being able to download/upload anything due to all your bandwith being used up. Setting min/max_peers allows rTorrent to scale based on your personal network</p>
+
+<blockquote>
+
+  <h3 id="minpeersmaxpeers">min_peers/max_peers</h3>
+
+  <p>There is probably a formula to associate min/max_peers with your network, but I just took a guess, and it works very well for me, and should scale well for big/small networks</p>
+</blockquote>
+
+<p>If you want to know more about min/max_peers please check out one of my other posts:
+<a href="http://fsk141.com/what-is-min_peers-for-and-why-should-i-uncomment-it">http://fsk141.com/what-is-min_peers-for-and-why-should-i-uncomment-it</a></p>
+
+<div>
+    <pre><code class="bash">min_peers = 50 ; look for more peers if limit doesn&#39;t reach 50
+max_peers = 500 ; if there are 500 peers, don&#39;t allow any more
+
+# Same as above but for seeding completed torrents (-1 = same as downloading)
+min_peers_seed = 10
+max_peers_seed = 100</code></pre>
+  </div>
+
+<blockquote>
+
+  <h3 id="sidenote---"> – Sidenote –</h3>
+
+  <p>Basic format of .rtorrent.rc config variables are</p>
+</blockquote>
+
+<div>
+    <pre><code class="bash">config_name = value</code></pre>
+  </div>
+
+<p>You can add comments with <strong>#</strong> or inline with <strong>;</strong></p>
+
+<div>
+    <pre><code class="bash">#comment
+config_name = value
+
+config_name = value ; inline comment (haven&#39;t seen this documented, but it works)</code></pre>
+  </div>
+
+<blockquote>
+
+  <h3 id="max-uploads">Max uploads</h3>
+
+  <p>I have my rate set a bit high at 25 max uploads; but I have a big network to support it. I would suggest setting this to around 8-10 for lesser networks. Like I touched on earlier, it’s not helpful to have a bunch of open connections if your bandwith can’t support them.</p>
+</blockquote>
+<div>
+    <pre><code class="bash"># Maximum number of simultanious uploads per torrent.
+max_uploads = 25</code></pre>
+  </div>
+
+<blockquote>
+
+  <h3 id="port-forwarding">Port forwarding</h3>
+
+  <p>It’s unholy to start any torrent client without opening ports. Most clients have gotten smarter with udp, and dht (trackerless) where you can get away downloading files, and uploading a little. Yet the preferred clients are the ones that have open ports, and are connectable by others.</p>
+</blockquote>
+
+<p>Google around for port forwarding, or just login to your router (192.168.1.1), and look for port forwarding, virtual servers, or something similar. I opened a port range 6881-6999 (default torrent port range) on my router and allow rTorrent to access the entire port space randomly.</p>
+<div>
+    <pre><code class="bash">port_range = 6881-6999 ; ports to use for listening
+
+# Start opening ports at a random position within the port range.
+port_random = yes</code></pre>
+  </div>
+
+<blockquote>
+
+  <h3 id="the-rest">The rest</h3>
+
+  <p>I commented my .rtorrent.rc pretty well, so you can understand what things do. Things like session_dir &amp; directory are important for basic functionality to work:</p>
+</blockquote>
+
+<div>
+    <pre><code class="bash"># Session tmp file (relative dir is good, absolute is bad)
+session = ./Downloads/.session
+
+# Default directory to save the downloaded torrents.
+directory = ./Downloads/</code></pre>
+  </div>
+
+<p>Everything else in my configuration file is to make things simplier, but are optional, a little complicated, and I will go over them below in the Advanced Setup section.</p>
+
+<h2 id="first-startup">First Startup</h2>
+
+<h3 id="initiate-countdown">Initiate Countdown</h3>
+
+<p>Now that you have a smashing .rtorrent.rc you’re ready to fire up rTorrent &amp; get torrenting.</p>
+
+<p>Oh, wait! How about a super tip!</p>
+
+<p>Instead of running rTorrent in the foreground, I suggest initiating a screen session previous to starting rTorrent. This is just in case you close your terminal.</p>
+
+<p>Simple screen primer (<code>man screen</code> to get more info):</p>
+<div>
+    <pre><code class="bash">screen #starts a new screen session
+rtorrent #starts rTorrent in new screen session
+------
+^a d # disconnects from screen session
+screen -x # reconnects to screen session</code></pre>
+  </div>
+
+<p>So now that you have a new screen session, and started up rTorrent, lets take a look around, and see what we have. You can arrow around, and try to figure things out, but I would highly suggest running a <code>man rtorrent</code></p>
+
+<h3 id="annotated-rtorrent">Annotated rTorrent</h3>
+
+<p>Let’s start with a blank slate so we can go over the basics:
+<a href="http://fsk141.com/uploads/2011/12/annotated_blank.png"><img src="http://fsk141.com/uploads/2011/12/annotated_blank-750x468.png" alt="" /></a></p>
+
+<p>This should make sense to even the dumbest among us. The annotated version of the rTorrent gui shows everything you need to know. The important things are on the bottom left, and everything else is secondary to that ;)</p>
+
+<h3 id="load-your-first-torrent">Load Your First Torrent</h3>
+
+<p>If I were you, I would grab a torrent and load it up so that you can follow along with the rest of the tutorial. The easiest way to do this is to download a torrent &lt; How about <a href="http://www.archlinux.org/iso/2011.08.19/archlinux-2011.08.19-core-dual.iso.torrent">arch_core-dual</a> &gt;</p>
+
+<p>After you have the .torrent file, head into rTorrent. </p>
+<div>
+    <pre><code class="bash">click &lt;enter&gt;
+
+# you&#39;ll receive a load&gt; prompt
+## enter the path to the .torrent file
+### for me it&#39;s in:
+### ~/Downloads/archlinux-2011.08.19-core-dual.iso.torrent
+
+load&gt; ~/Downloads/archlinux-2011.08.19-core-dual.iso.torrent
+
+#### tab completion works:
+#### ~/Downloads/arch&lt;tab&gt; would do the trick!</code></pre>
+  </div>
+
+<p>This will add the torrent into rTorrent in a stopped state. If you would like the torrent to start automatically, then use  instead of  to load your torrent.</p>
+<div>
+    <pre><code class="bash"># hover over the torrent (arrow keys)
+
+^s # ctrl-s -- to start the torrent
+
+## unless you used &lt;backspace&gt; in which case it should auto start</code></pre>
+  </div>
+
+<p>Now that we have something started, you should see your bottom status bar light up. Numbers should fly by… Telling you the speed of download/upload, connected peers, and everything you need to know.</p>
+
+<h3 id="get-torrent-details">Get Torrent Details</h3>
+
+<p>At this time start poking your keyboard &gt;</p>
+<div>
+    <pre><code class="bash"># hover over a torrent
+
+&lt;right arrow&gt;
+
+## you&#39;ll now be in torrent view mode
+## hover over the right fields to view contents
+
+&lt;up arrow&gt; &amp; &lt;down arrow&gt; #to navigate sub fields
+&lt;right arrow&gt; &amp; &lt;left arrow&gt; to view properties
+
+### Choices
+#### Peer List
+#### Info
+#### File List
+#### Tracker List
+#### Chunks Seen
+#### Transfer List</code></pre>
+  </div>
+
+<h3 id="some-other-things">Some Other Things</h3>
+
+<p>I would try hitting your number keys (from 1 to 0). This will give you your different views (active, seeding, inactive, etc.)</p>
+
+<p>asd zxc ASD ZXC (play around with these keys for modifying throttle on the fly.</p>
+
+<div>
+    <pre><code class="bash">^s (start)
+^d (stop) -- hit twice to remove
+^r (hash check)</code></pre>
+  </div>
+
+<h2 id="keybindings">Keybindings</h2>
+
+<p>How about a full rundown on all the special keys for rTorrent. I know it’s a little tedious to look at tables of information, but try your hand at most of the keybindings that are outlined below, and it’ll become second nature in a matter of minutes.</p>
+
+<h3 id="lets-start-with-the-basics">Lets Start With The Basics</h3>
+
+<table>
+<tbody>
+<tr>
+<td>backspace</td>
+<td>Add torrent using an URL or file path. Use tab to view directory content and do auto-complete. Also, wildcards can be used. For example: ~/torrent/*</td>
+</tr>
+<tr>
+<td>return</td>
+<td>Same as backspace, except the torrent remains inactive. (Use ^s to activate)</td>
+</tr>
+<tr>
+<td>^o</td>
+<td>Set new download directory for selected torrent. Only works if torrent has not yet been activated.</td>
+</tr>
+<tr>
+<td>^s</td>
+<td>Start download. Runs hash first unless already done.</td>
+</tr>
+<tr>
+<td>^d</td>
+<td>Stop an active download, or remove a stopped download.</td>
+</tr>
+<tr>
+<td>^k</td>
+<td>Stop and close the files of an active download.</td>
+</tr>
+<tr>
+<td>^r</td>
+<td>Initiate hash check of torrent. Without starting to download/upload.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="throttle-control">Throttle Control</h3>
+
+<p>This is for global throttleing, and changes can be viewed in the bottom left.</p>
+<table>
+<tbody>
+<tr>
+<td>a/s/d</td>
+<td>Increase the upload throttle by 1/5/50 KB.</td>
+</tr>
+<tr>
+<td>z/x/c</td>
+<td>Decrease the upload throttle by 1/5/50 KB.</td>
+</tr>
+<tr>
+<td>A/S/D</td>
+<td>Increase the download throttle by 1/5/50 KB.</td>
+</tr>
+<tr>
+<td>Z/X/C</td>
+<td>Decrease the download throttle by 1/5/50 KB.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="main-view-navigation">Main View Navigation</h3>
+
+<p><a href="http://fsk141.com/uploads/2011/12/2011-12-26-001502_1280x800_scrot.png"><img src="http://fsk141.com/uploads/2011/12/2011-12-26-001502_1280x800_scrot-750x468.png" alt="" /></a></p>
+
+<table>
+<tbody>
+<tr>
+<td>^q</td>
+<td>Initiate shutdown, press again to force the shutdown and skip sending the stop signal to trackers.</td>
+</tr>
+<tr>
+<td>up arrow/down arrow</td>
+<td>Select item.</td>
+</tr>
+<tr>
+<td>left</td>
+<td>Go back to the previous screen.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="download-view">Download View</h3>
+
+<table>
+<tbody>
+<tr>
+<td>right</td>
+<td>Switch to selected view</td>
+</tr>
+<tr>
+<td>left</td>
+<td>Switch to view selection or back to main view</td>
+</tr>
+<tr>
+<td>1/2</td>
+<td>Adjust max uploads.</td>
+</tr>
+<tr>
+<td>3/4</td>
+<td>Adjust min peers.</td>
+</tr>
+<tr>
+<td>5/6</td>
+<td>Adjust max peers.</td>
+</tr>
+<tr>
+<td>p</td>
+<td>Display peer list</td>
+</tr>
+<tr>
+<td>o</td>
+<td>Display torrent info</td>
+</tr>
+<tr>
+<td>i</td>
+<td>Display file list</td>
+</tr>
+<tr>
+<td>u</td>
+<td>Display tracker list</td>
+</tr>
+<tr>
+<td>t/T</td>
+<td>Initiate tracker request. Use capital T to force the request, ignoring the "min interval" set by the tracker.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="peer-list">Peer List</h3>
+
+<p><a href="http://fsk141.com/uploads/2011/12/peer_list.png"><img src="http://fsk141.com/uploads/2011/12/peer_list-750x468.png" alt="" /></a></p>
+
+<table>
+<tbody>
+<tr>
+<td>left</td>
+<td>Switch to view selection</td>
+</tr>
+<tr>
+<td>right</td>
+<td>Show peer details</td>
+</tr>
+<tr>
+<td>\*</td>
+<td>Snub peer (stop uploading to this peer)</td>
+</tr>
+<tr>
+<td>k</td>
+<td>Kick peer (disconnect from peer)</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Ban peer (No unbanning is possible.) 0.8.4+</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="file-list">File List</h3>
+
+<p><a href="http://fsk141.com/uploads/2011/12/file_list.png"><img src="http://fsk141.com/uploads/2011/12/file_list-750x468.png" alt="" /></a></p>
+
+<table>
+<tbody>
+<tr>
+<td>left</td>
+<td>Switch to view selection</td>
+</tr>
+<tr>
+<td>right</td>
+<td>Show file details</td>
+</tr>
+<tr>
+<td>space</td>
+<td>Change the file priority; applies recursively when done on a directory</td>
+</tr>
+<tr>
+<td>\*</td>
+<td>Change the priority of all files</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Collapse directories. While collapsed, press right to expand the selected directory.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="tracker-list">Tracker List</h3>
+
+<p><a href="http://fsk141.com/uploads/2011/12/tracker_list.png"><img src="http://fsk141.com/uploads/2011/12/tracker_list-750x468.png" alt="" /></a></p>
+
+<table>
+<tbody>
+<tr>
+<td>left</td>
+<td>Switch to view selection</td>
+</tr>
+<tr>
+<td>\*</td>
+<td>Enable/disable tracker</td>
+</tr>
+<tr>
+<td>space</td>
+<td>Rotate trackers in a group</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="advanced-setup">Advanced Setup</h2>
+
+<p>dive into watch directories &amp; some more powerful things (scgi &amp; external clients)</p>
+
+<p>I hope that you’ve learned at lest one tidbit of awesomeness by now. If you have, great, if not, hopefully this section will tickle your fancy.</p>
+
+<h3 id="scheduling">Scheduling</h3>
+
+<p>Starting out with rTorrent is rough. You’re given almost a blank slate, a config file with some complex things that are foreign (coming from a nice gui client that does everything for you). But once you learn the power behind having a solid .rtorrent.rc, you realize why you’ve switched, and why you’ll never go back. Scheduling is one such feature that is unbelievably powerful.</p>
+
+<p>We’ll start with the simplest of schedule scripts. It’s purpose is to make sure you don’t overfill your system with bits &amp; bytes.</p>
+
+<h4 id="excerpt-from-rtorrent-man-page-on-scheduling">Excerpt from rtorrent man page on scheduling</h4>
+
+<blockquote>
+  <blockquote>
+    <p>schedule = id,start,interval,command
+    Call  command  every  interval  seconds, starting from start. An interval of zero calls the task once, while a start of zero calls it immediately. Currently command is forwarded to the option handler.  start and interval may optionally use a time format, dd:hh:mm:ss. F.ex to start a task every day at 18:00, use 18:00:00,24:00:00.</p>
+  </blockquote>
+</blockquote>
+
+<p>The following task will prevent rTorrent from downloading too much, and entirely filling your hard drive up with data.</p>
+<div>
+    <pre><code class="bash"># Close torrents when diskspace is low.
+##
+## schedule (initiate a new schedule script)
+## low_diskspace (scheduler name)
+## 5,60 (start 5 seconds after rtorrent starts; run every 60 seconds)
+schedule = low_diskspace,5,60,close_low_diskspace=2048M</code></pre>
+  </div>
+
+<p>My most favorite of configurations are the following. It simplifies my flow of downloading, and makes it a breeze to add an infinite number of torrents all at once (your computer/network permitting). The following schedulers are for watch directories. A watch directory watches for new *.torrent files, and loads them into rtorrent. You can simply add a watch folder, and you will have a bunch of torrents start up in your default download_dir. Or you can add a watch folder with a d.set_directory set to the folder in which you would like the torrent stored (golden awesome rainbow sauce)</p>
+
+<p>It looks something like this:</p>
+<div>
+    <pre><code class="bash"># download to default directory (download_dir)
+## start after 5; run every 5 seconds
+## load all \*.torrent files in ./Downloads/watch
+schedule = watch_directory,5,5,&quot;load_start=./Downloads/watch/*.torrent&quot;
+
+# download to ~/Downloads/music/
+## schedule (initiate a new schedule script)
+## watch_directory_2 (names watch_directory script)
+### you must have a different name for every watch_directory
+## 5,5 (start after 5; run every 5 seconds)
+## load_start=~/Downloads/watch/music/*.torrent (load all \*.torrent files in ~/Downloads/watch/music)
+## d.set_directory=~/Downloads/music/ (download files to ~/Downloads/music)
+
+schedule = watch_directory_2,5,5,&quot;load_start=~/Downloads/watch/music/*.torrent,d.set_directory=~/Downloads/music/&quot;
+
+# and here are all my watch_directory scripts together
+# Watch a directory for new torrents, and stop those that have been deleted (^d)
+
+schedule = watch_directory,5,5,&quot;load_start=./Downloads/watch/*.torrent&quot;
+schedule = watch_directory_2,5,5,&quot;load_start=~/Downloads/watch/music/*.torrent,d.set_directory=~/Downloads/music/&quot;
+schedule = watch_directory_3,5,5,&quot;load_start=~/Downloads/watch/television/*.torrent,d.set_directory=~/Downloads/television/&quot;
+schedule = watch_directory_4,5,5,&quot;load_start=~/Downloads/watch/books/*.torrent,d.set_directory=~/Downloads/books/&quot;
+schedule = untied_directory,5,5,stop_untied= ; stop torrents once removed from the client</code></pre>
+  </div>
+
+<h4 id="stop-torrents-at-certain-ratio">Stop torrents at certain ratio</h4>
+
+<p>Say you’re generous, but not too generous. You would like to seed back the torrents you have downloaded, yet you don’t want to give away your bandwith indefinitely. Then this is the solution for you:</p>
+
+<div>
+    <pre><code class="bash"># stop_on_ratio = min_ratio,min_upload,max_ratio
+## schedule (initiate a new schedule script)
+## ratio (uses ratio scheduler)
+## 60,60 (start after 60, run every 60 seconds)
+## stop_on_ratio=200,50M,300 (200% [min_ratio], 50M [min_upload], 300% [max_ratio])
+
+schedule = ratio,60,60,&quot;stop_on_ratio=200,50M,300&quot;</code></pre>
+  </div>
+
+<h4 id="setting-scheduled-throttle-times">Setting scheduled throttle times</h4>
+
+<p>So you want ALL of your bandwith, uninterrupted, during the whole day. Most likely you want to heavily throttle durring the day, and open up the floodgates at night. I’ve outlined a simple scheduler to have unlimited upload/download from 22:00 - 06:00, and throttle during everything else:</p>
+
+<div>
+    <pre><code class="bash">#set daily download/upload rates
+#
+# Apply 25KB/s down &amp; 5KB/s up at 06:00
+
+schedule = throttle_1,06:00:00,24:00:00,download_rate=25
+schedule = throttle_2,06:00:00,24:00:00,upload_rate=5
+
+# Apply unlimited upload/download at 22:00
+schedule = throttle_3,22:00:00,24:00:00,download_rate=0
+schedule = throttle_4,22:00:00,24:00:00,upload_rate=0</code></pre>
+  </div>
+
+<h4 id="using-another-config-file-other-than-rtorrentrc">Using another config file (other than ~/.rtorrent.rc)</h4>
+
+<p>Once upon a time I wanted to run rTorrent as root, I wanted to run torrenting over port 443 (https) or 80 (http) so that I could torrent in a blocked network. I needed to execute rTorrent with root since all ports under 1000 aren’t allowed to be allocated to regular users. Instead of setting everything up for the root user, just use sudo and specify the configuration file manually:</p>
+
+<div>
+    <pre><code class="bash">rtorrent -n -o import=~/my_other_rtorrent.rc</code></pre>
+  </div>
+
+<p>I have more things to add to this section, but I need a better way to organize them. You’ll just have to wait for future updates.</p>
+
+<h2 id="resources-unused-comparison-with-transmission">Resources Unused (comparison with transmission)</h2>
+
+<p><a href="http://fsk141.com/uploads/2011/12/resources.png"><img src="http://fsk141.com/uploads/2011/12/resources-750x468.png" alt="" /></a></p>
+
+<p>This was quite shocking to say the least. I didn’t really think there would be a literal ton of difference between rTorrent and Transmission. I’ve always known rTorrent to be the best contender in minimalist, low resource torrent clients. Yet Transmission is also touted as lightweight. Yet as you can see above rTorrent never really swayed from 1-3% cpu usage, whereas Transmission spawned a gazillion processes and had about 25-50% cpu usage.</p>
+
+<p><a href="http://fsk141.com/uploads/2011/12/transmission.png"><img src="http://fsk141.com/uploads/2011/12/transmission-750x468.png" alt="" /></a></p>
+
+<p>I should really need to go into more detail, since well everyone knows that rTorrent is the almost resourceless client. It has almost no overhead, uses minimal resources, is programmed well, with performance in mind, and has a large community of users behind to support it’s overall success.</p>
+
+<p><strong>Resources:</strong>
+  1. <code>man rtorrent</code>
+  2. <a href="http://libtorrent.rakshasa.no/wiki/RTorrentUserGuide">http://libtorrent.rakshasa.no/wiki/RTorrentUserGuide</a>
+  3. <a href="http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks">http://libtorrent.rakshasa.no/wiki/RTorrentCommonTasks</a>
+  4. <a href="https://wiki.archlinux.org/index.php/RTorrent">https://wiki.archlinux.org/index.php/RTorrent</a></p>
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+		  <li><a href="/what-is-min_peers-for-and-why-should-i-uncomment-it">[rTorrent] What is min_peers for, and why Should I Uncomment it? <i>(December 25, 2011)</i></a></li>
+		  
+		  <li><a href="/flickr-in-linux">Flickr with Linux <i>(October 15, 2009)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+		  <li><a href="/review-noctua-nf-p14-flx">[Review] Noctua NF-P14 FLX <i>(December 21, 2010)</i></a></li>
+		  
+		  <li><a href="/slow-zfs-zpool">Slow ZFS zpool? <i>(October 06, 2010)</i></a></li>
+		  
+		  <li><a href="/potw-tmux">[PotW] tmux <i>(October 13, 2010)</i></a></li>
+		  
+		  <li><a href="/review-yubikey-lets-get-obscure-with-otp">[Review] Yubikey - Let's get obscure with otp <i>(December 22, 2011)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/what-is-min_peers-for-and-why-should-i-uncomment-it" title="[rTorrent] What is min_peers for, and why Should I Uncomment it?">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/me-learns-dvorak" title="/me learns dvorak">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>31 December 2011</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#.rtorrent.rc-ref">.rtorrent.rc <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#how to use rtorrent like a pro-ref">how to use rtorrent like a pro <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#libtorrent-ref">libtorrent <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#master rtorrent-ref">master rtorrent <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#rtorrent-ref">rtorrent <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#rtorrent configuration-ref">rtorrent configuration <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#rtorrent setup-ref">rtorrent setup <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#rtorrent user guide-ref">rtorrent user guide <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '878 http://fsk141.com/?p=878';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

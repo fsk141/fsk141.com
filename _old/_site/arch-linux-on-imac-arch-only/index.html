@@ -1,0 +1,537 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Arch Linux on iMac [Arch Only]</title>
+		
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>Arch Linux on iMac [Arch Only] <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p>So I just got an iMac for work, and decided to put linux on it. I could have stuck with Mac, but meh, I need linux! It makes me all warm and fuzzy inside. I wrote down a log of what I did to get everything working, enjoy.</p>
+
+<p><a href="http://www.flickr.com/photos/68444690@N00/5054457761/"><img src="http://farm5.static.flickr.com/4111/5054457761_6cc63cddd5.jpg" alt="New-Desk" /></a></p>
+
+<p>1) Boot up Mac &amp; install rEFIt (<a href="http://refit.sourceforge.net">http://refit.sourceforge.net</a>) &amp;&amp; reboot twice (second reboot should show rEFIt menu.</p>
+
+<p>2) Boot Archlinux CD ( I choose the x86_64 netinstall image) &amp; append “nomodeset” <em>without quotes</em> to the end of the boot line</p>
+
+<p>3) Convert disk from GUID to MBR
+- <strong>login (root)</strong>
+- <strong>dhcpcd eth0</strong>
+- <strong>pacman -Sy &amp;&amp; pacman -Su</strong>
+- <strong>pacman -S gdisk</strong>
+- [root@archiso ~]# fdisk -l | grep /dev #(this will give you your disk)</p>
+
+<p>Disk /dev/sda: 500.1 GB, 500107862016 bytes « this is the disk I want (I only have one disk in the system)</p>
+
+<ul>
+  <li>[root@archiso ~]# gdisk /dev/sda</li>
+</ul>
+
+<p>GPT fdisk (gdisk) version 0.6.10</p>
+
+<p>Partition table scan:
+MBR: MBR only
+BSD: not present
+APM: not present
+GPT: present</p>
+
+<p>Found valid MBR and GPT. Which do you want to use?
+1 - MBR
+2 - GPT
+3 - Create blank GPT</p>
+
+<p>Your answer:
+1</p>
+
+<hr />
+
+<p>1  - MBR (This really doesn’t matter since we are going to wipe GPT, but select it anyway)</p>
+
+<hr />
+
+<p>Command (? for help): x</p>
+
+<p>Expert command (? for help): z
+About to wipe out GPT on /dev/sdc. Proceed? (Y/N): y
+GPT data structures destroyed! You may now partition the disk using fdisk or
+other utilities.
+Blank out MBR? (Y/N): y</p>
+
+<hr />
+
+<p>This will wipe out GPT &amp; MBR for a brand new HDD, now you are ready to continue with your arch install as if it was a beige box.</p>
+
+<hr />
+<p>4) Continue With Install (/arch/setup)
+- Select Source (kernel.org)
+- Set clock
+- Prepare Hard Drive(s)
+- You can autoprepare if you wish, this is what I did on my 500GB drive:
+- Manually Partition
+100GB /
+398GB /home
+2GB   /swap
+- Manually configure block devices
+- UUID is king
+- /dev/sda1 - xfs - /
+- /dev/sda2 - xfs - /home
+- /dev/sda3 = swap
+- Ignore /boot missing error
+- Select Packages
+- asterisk base &amp; base-devel
+- openssh
+- sudo
+- Configure (change hostname &amp; stuff)
+- Install bootloader
+- Configure menu.lst &amp; add “nomodeset”  to the end of the kernel lines
+- Something like this: <code>kernel /boot/vmlinuz26 root=/dev/disk/by-uuid/15734824-7189-44e5-ac82-81b4215144f6 ro nomodeset</code></p>
+
+<ul>
+  <li>Reboot</li>
+</ul>
+
+<p>5) Insert MAC OS X disk (hold alt &amp; boot)
+- Utilities &gt; Terminal:
+- <em>bless –device /dev/disk0 –setBoot –legacy –verbose</em> (where /dev/disk0 is where I installed grub [I’ve heard there can be issues with installing grub on the root of the disk, but I’ve had no problems so far])</p>
+
+<p>6) boot &amp; do some configging:
+- pacman -S xorg
+- lspci | grep VGA (http://wiki.archlinux.org/index.php/MacBook#Xorg)
+- I have ATI drivers:
+- I chose catalyst drivers over xf86-video-ati/radeonhd since they worked well, and were a breeze to install through yaourt:
+- <em>yaourt -S catalyst</em> (or you can manually do everything <a href="http://aur.archlinux.org/packages.php?K=catalyst">start here</a>
+- I got hung up with my ~/.xinitrc &amp; it was causing problems, yet after removing it I was able to start twm with no issues</p>
+
+<p>Here is my xorg.conf just in case anyone is interested:</p>
+
+<div>
+    <pre><code class="bash">Section &quot;ServerLayout&quot;
+ Identifier     &quot;Xorg Configured&quot;
+ Screen      0  &quot;aticonfig-Screen[0]-0&quot; 0 0
+ InputDevice    &quot;Keyboard0&quot; &quot;CoreKeyboard&quot;
+ InputDevice    &quot;USB Mouse&quot; &quot;CorePointer&quot;
+EndSection
+
+Section &quot;Files&quot;
+
+# Additional fonts: Locale, Gimp, TTF...
+#    FontPath     &quot;/usr/share/lib/X11/fonts/latin2/75dpi&quot;
+#    FontPath     &quot;/usr/share/lib/X11/fonts/latin2/100dpi&quot;
+# True type and type1 fonts are also handled via xftlib, see /etc/X11/XftConfig!
+ ModulePath   &quot;/usr/lib/xorg/modules&quot;
+ FontPath     &quot;/usr/share/fonts/misc:unscaled&quot;
+ FontPath     &quot;/usr/share/fonts/misc&quot;
+ FontPath     &quot;/usr/share/fonts/75dpi:unscaled&quot;
+ FontPath     &quot;/usr/share/fonts/75dpi&quot;
+ FontPath     &quot;/usr/share/fonts/100dpi:unscaled&quot;
+ FontPath     &quot;/usr/share/fonts/100dpi&quot;
+ FontPath     &quot;/usr/share/fonts/PEX&quot;
+ FontPath     &quot;/usr/share/fonts/cyrillic&quot;
+ FontPath     &quot;/usr/share/fonts/Type1&quot;
+ FontPath     &quot;/usr/share/fonts/ttf/western&quot;
+ FontPath     &quot;/usr/share/fonts/ttf/decoratives&quot;
+ FontPath     &quot;/usr/share/fonts/truetype&quot;
+ FontPath     &quot;/usr/share/fonts/truetype/openoffice&quot;
+ FontPath     &quot;/usr/share/fonts/truetype/ttf-bitstream-vera&quot;
+ FontPath     &quot;/usr/share/fonts/latex-ttf-fonts&quot;
+ FontPath     &quot;/usr/share/fonts/defoma/CID&quot;
+ FontPath     &quot;/usr/share/fonts/defoma/TrueType&quot;
+EndSection
+
+Section &quot;Module&quot;
+ Load  &quot;ddc&quot;  # ddc probing of monitor
+ Load  &quot;dbe&quot;
+ Load  &quot;dri&quot;
+ Load  &quot;extmod&quot;
+ Load  &quot;glx&quot;
+ Load  &quot;bitmap&quot; # bitmap-fonts
+ Load  &quot;type1&quot;
+ Load  &quot;freetype&quot;
+ Load  &quot;record&quot;
+EndSection
+
+Section &quot;ServerFlags&quot;
+ Option        &quot;AllowMouseOpenFail&quot; &quot;true&quot;
+ Option        &quot;AutoAddDevices&quot; &quot;False&quot;
+EndSection
+
+Section &quot;InputDevice&quot;
+ Identifier  &quot;Keyboard0&quot;
+ Driver      &quot;keyboard&quot;
+ Option        &quot;CoreKeyboard&quot;
+ Option        &quot;XkbRules&quot; &quot;xorg&quot;
+ Option        &quot;XkbModel&quot; &quot;pc105&quot;
+ Option        &quot;XkbLayout&quot; &quot;us&quot;
+ Option        &quot;XkbVariant&quot; &quot;&quot;
+EndSection
+
+Section &quot;InputDevice&quot;
+ Identifier  &quot;USB Mouse&quot;
+ Driver      &quot;mouse&quot;
+ Option        &quot;Device&quot; &quot;/dev/input/mice&quot;
+ Option        &quot;SendCoreEvents&quot; &quot;true&quot;
+ Option        &quot;Protocol&quot; &quot;IMPS/2&quot;
+ Option        &quot;ZAxisMapping&quot; &quot;4 5&quot;
+ Option        &quot;Buttons&quot; &quot;5&quot;
+EndSection
+
+Section &quot;Monitor&quot;
+ Identifier   &quot;aticonfig-Monitor[0]-0&quot;
+ Option        &quot;VendorName&quot; &quot;ATI Proprietary Driver&quot;
+ Option        &quot;ModelName&quot; &quot;Generic Autodetecting Monitor&quot;
+ Option        &quot;DPMS&quot; &quot;true&quot;
+EndSection
+
+Section &quot;Device&quot;
+ Identifier  &quot;aticonfig-Device[0]-0&quot;
+ Driver      &quot;fglrx&quot;
+ BusID       &quot;PCI:1:0:0&quot;
+EndSection
+
+Section &quot;Screen&quot;
+ Identifier &quot;aticonfig-Screen[0]-0&quot;
+ Device     &quot;aticonfig-Device[0]-0&quot;
+ Monitor    &quot;aticonfig-Monitor[0]-0&quot;
+ DefaultDepth     24
+ SubSection &quot;Display&quot;
+ Viewport   0 0
+ Depth     24
+ Modes    &quot;1920x1200&quot;
+ EndSubSection
+EndSection
+
+Section &quot;DRI&quot;
+ Mode         0666
+EndSection</code></pre>
+  </div>
+
+<p>After I got X installed I went on to install dwm (my window manager of choice), and synergy so that I don’t have to use another keyboard/mouse. This is a minimalistic rundown of what I had to do to get things working, and well things work. Please let me know if you’re having problems, since I hit a few hitches along the way, most were very easy to solve, otherwise I would have added them in.</p>
+
+<hr />
+
+<p>Sources:
+- <a href="http://www.rodsbooks.com/gdisk/wipegpt.html">http://www.rodsbooks.com/gdisk/wipegpt.html</a>
+- <a href="http://mac.linux.be/content/single-boot-linux-without-delay">http://mac.linux.be/content/single-boot-linux-without-delay</a>
+- <a href="http://wiki.archlinux.org/index.php/ATI">http://wiki.archlinux.org/index.php/ATI</a>
+- <a href="http://wiki.archlinux.org/index.php/MacBook">http://wiki.archlinux.org/index.php/MacBook</a></p>
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/boot-isos-with-grub-2">Boot iso's with grub 2 <i>(January 17, 2011)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+		  <li><a href="/slow-zfs-zpool">Slow ZFS zpool? <i>(October 06, 2010)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+		  <li><a href="/review-yubikey-lets-get-obscure-with-otp">[Review] Yubikey - Let's get obscure with otp <i>(December 22, 2011)</i></a></li>
+		  
+		  <li><a href="/tutorial-openvz-debian-zenoss-monitor-your-world">[Tutorial] OpenVZ - Debian - Zenoss (monitor your world) <i>(October 08, 2010)</i></a></li>
+		  
+		  <li><a href="/flickr-in-linux">Flickr with Linux <i>(October 15, 2009)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/upgrade-opensolaris-to-openindiana" title="Upgrade OpenSolaris to OpenIndiana">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/picasa-vs-flickr-and-why-im-moving-back-to-flickr" title="Picasa vs. Flickr (And why I’m moving back to Flickr)">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>21 September 2010</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#Archlinux-ref">Archlinux <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#ati-ref">ati <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Linux-ref">Linux <span>19</span></a></li>
+     
+    	<li><a href="/tags.html#linux on mac-ref">linux on mac <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#linux without os x-ref">linux without os x <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Mac-ref">Mac <span>3</span></a></li>
+     
+    	<li><a href="/tags.html#rEFIt-ref">rEFIt <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '330 http://fsk141.com/?p=330';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

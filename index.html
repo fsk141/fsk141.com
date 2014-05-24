@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1>Recent Posts</h1>
+
+  <ul class="posts">
+    {% for post in site.posts limit:6 %}
+      <li>
+		<a class="post-link" style="background-color:{% cycle '#54EE00', '#FF358B', '#01B0F0' %}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        	<span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+			<p class="post-description">{{ post.description }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h1>Older Posts</h1>
+		<ul class="posts">
+ 	{% for category in site.categories %} 
+		<a class="post-link" style="background-color:{% cycle '#54EE00', '#FF358B', '#01B0F0' %}">{{ category[0] | join: "/" }}</a>
+	<div style="margin-left: 30%;">
+		{% assign index_pages_list = category[1] %}  
+		{% include index_pages_list %}
+	</div>
+
+	{% endfor %}
+		</ul>
+</div>

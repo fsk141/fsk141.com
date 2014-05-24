@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<div class="post">
+
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %} -- # of words: {{ page.content | number_of_words }}
+	</p>
+  </header>
+
+  <article class="post-content">
+  {{ content }}
+
+	<h3>Related posts</h3>
+	<ul>
+		{% for rpost in site.related_posts limit:6 %}
+		  <li><a href="{{ rpost.url }}">{{ rpost.title }} <i>({{ rpost.date | date: '%B %d, %Y' }})</i></a></li>
+		  {% endfor %}
+	</ul>
+  </article>
+

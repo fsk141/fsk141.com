@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>[Review] Yubikey - Let's get obscure with otp</title>
+		<meta name="description" content="I was happy to receive my [Yubikey](https://www.yubico.com/personal-use) by [Yubico](https://www.yubico.com) the other day; and have been happily including it into my computer life. For those of you that aren't familiar with Yubico, or OTP (one time password) devices; it's basically a stateless, timeless keyfob that generates a text string based off an AES encrypted key. To verify your identity, all you need to do is authenticate with the Yubico server (they have the private AES key that will verify your public key) You can use your yubikey for a multitude of two phase authentication choices, from logging into your wordpress to your ssh servers.">
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>[Review] Yubikey - Let's get obscure with otp <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p><a href="http://fsk141.com/uploads/2011/12/package_inside.jpg"><img src="http://fsk141.com/uploads/2011/12/package_inside-750x617.jpg" alt="" /></a></p>
+
+<p>I was happy to receive my <a href="https://www.yubico.com/personal-use">Yubikey</a> by <a href="https://www.yubico.com">Yubico</a> the other day; and have been happily including it into my computer life. For those of you that aren’t familiar with Yubico, or OTP (one time password) devices; it’s basically a stateless, timeless keyfob that generates a text string based off an AES encrypted key. To verify your identity, all you need to do is authenticate with the Yubico server (they have the private AES key that will verify your public key) You can use your yubikey for a multitude of two phase authentication choices, from logging into your wordpress to your ssh servers.</p>
+
+<p><strong>Before we dive into the uses, let’s gawk at the beautiful simplicity of the device, and it’s accompanying software.</strong></p>
+
+<p>The key comes packaged in a neat little plastic sleeve:</p>
+
+<p><a href="http://fsk141.com/uploads/2011/12/package_front.jpg"><img src="http://fsk141.com/uploads/2011/12/package_front-750x827.jpg" alt="" /></a></p>
+
+<p>There are two flavors of yubikey, black &amp; white. I choose the beautiful black. It’s about as large as two quarters put next to one another.</p>
+
+<p><a href="http://fsk141.com/uploads/2011/12/key_size.jpg"><img src="http://fsk141.com/uploads/2011/12/key_size-750x636.jpg" alt="" /></a></p>
+
+<p>The top (shown above) has an activator pad; in which you press to receive your otp; or if you hold for longer than 2 seconds; you’ll receive a text string of your choosing (YKPersonalization software required)</p>
+
+<p>The bottom of the device has a simple identifier (Powered by Yubico), and small qrcode near the inserting end of the key.</p>
+
+<p><a href="http://fsk141.com/uploads/2011/12/key_front.jpg"><img src="http://fsk141.com/uploads/2011/12/key_front-750x591.jpg" alt="" /></a></p>
+
+<p>Upon plugging in the device I loved how it matched my laptop.</p>
+
+<p><a href="http://fsk141.com/uploads/2011/12/key_laptop.jpg"><img src="http://fsk141.com/uploads/2011/12/key_laptop-750x580.jpg" alt="" /></a></p>
+
+<p>One thing that I thought of soon after plugging it in is how wonderful it would be if it were just a tiny nub sticking out of the usb with the contact surface almost flush with the usb port (I can dream :) But the usb flash drive form factor is nice, recognizable, and very thin. Overall the design is very neat. The device is sturdy, yet very thin and light at the same time.</p>
+
+<p>The companion software for the Yubikey is FANTASTIC. For arch linux I was wonderfully excited to simply run <code>yaourt -S yubikey-personalization-gui</code> &amp; executing sudo YKPersonalization</p>
+
+<p><a href="http://fsk141.com/uploads/2011/12/yubikey_software.png"><img src="http://fsk141.com/uploads/2011/12/yubikey_software-750x593.png" alt="" /></a></p>
+
+<p>This wonderful gui is simple to use, and provides an enormous functionality to your Yubikey.</p>
+
+<p>Out of the box, the Yubikey is ready to go. There are two configurable slots available, and slot 1 is configured to use the Yubico OTP. Once plugged into the software you can reprogram slot 2 to have a static password; secret message, or anything you so desire. You can reprogram slot 1 if you would like, but it will prohibit use with Yubico OTP, until reconfigured &amp; reauthenticated with the Yubico servers.</p>
+
+<p>The first thing I tried once getting my Yubikey was to navigate to <a href="http://demo.yubico.com/php-yubico/one_factor.php">http://demo.yubico.com/php-yubico/one_factor.php</a> and test out my device. Once inserted into your computer (Linux, Mac, Windows) the key is automatically recognized as a simple keyboard, and works as if you were just typing. You can test out otp, password/otp, otp/username/password on the demo server. It’s a wonderful place to start playing with your device.</p>
+
+<p>After spending about 5 minutes playing around with the demo server, installing the software, and adding funny messages to my slot 2 of the device, and hitting the keypad a bunch of times to see a bunch of seemingly random character sets fly by; I decided to dive into actually making the Yubikey work with my day-to-day life. I started by adding &amp; configuring this wordpress site to use otp. It’s a simple 3 step process.</p>
+
+<ol>
+  <li>
+    <p>Sign up for an api key (<a href="https://upgrade.yubico.com/getapikey">https://upgrade.yubico.com/getapikey</a>)</p>
+  </li>
+  <li>
+    <p>Download &amp; install the wordpress plugin (<a href="https://wordpress.org/extend/plugins/yubikey-plugin">https://wordpress.org/extend/plugins/yubikey-plugin</a>)</p>
+  </li>
+  <li>
+    <p>Wait about 5 minutes (for api key to propagate), and login with your newly added otp field on your wordpress login page.</p>
+  </li>
+</ol>
+
+<p>Other than just add otp to wordpress I read up on using it with gmail (not quite sure how to do it with linux just yet, but I plan to write a script that will allow me to use my Yubikey with 2 phase auth for gmail/google apps. I have a lot more to do with my yubikey, and love having a 2’nd phase of authentication to add some needed complexity to my life. I feel more secure, and enjoy the metallic tactile interface to access my websites &amp; servers. I have a lot more that I need to write about for this wonderful device, just think of this as a teaser review.</p>
+
+<p><strong>Some great reads about the Yubikey &amp; implementations:</strong></p>
+
+<p><a href="https://www.yubico.com/documentation">https://www.yubico.com/documentation</a></p>
+
+<p><a href="https://www.yubico.com/openid-server">https://www.yubico.com/openid-server</a></p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Yubikey">https://wiki.archlinux.org/index.php/Yubikey</a></p>
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+		  <li><a href="/review-noctua-nf-p14-flx">[Review] Noctua NF-P14 FLX <i>(December 21, 2010)</i></a></li>
+		  
+		  <li><a href="/flickr-in-linux">Flickr with Linux <i>(October 15, 2009)</i></a></li>
+		  
+		  <li><a href="/potw-tmux">[PotW] tmux <i>(October 13, 2010)</i></a></li>
+		  
+		  <li><a href="/how-to-properly-use-sudo">sudo (brief history -- &amp; installation) -- Part one of multipart series <i>(October 25, 2011)</i></a></li>
+		  
+		  <li><a href="/slow-zfs-zpool">Slow ZFS zpool? <i>(October 06, 2010)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/dwm-colors" title="Dwm Colors">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/what-is-min_peers-for-and-why-should-i-uncomment-it" title="[rTorrent] What is min_peers for, and why Should I Uncomment it?">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>22 December 2011</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#2 phase auth-ref">2 phase auth <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#one time password-ref">one time password <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#otp-ref">otp <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#wordpress yubikey-ref">wordpress yubikey <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#yubico-ref">yubico <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#yubikey-ref">yubikey <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '1030 http://fsk141.com/?p=1030';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

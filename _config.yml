@@ -1,0 +1,27 @@
+#
+# _config.yml
+#
+
+# Build Settings
+permalink   : none
+markdown    : kramdown
+lsi         : true
+include     : [".htaccess"]
+exclude     : ["README.md", "Rakefile"]
+
+# Site Settings
+name        : Fsk141
+tagline     : ^_^
+#description :
+baseurl     : http://fsk141.com
+
+author  :
+  name      : Jonny Gerold
+  email     : jonny@fsk141.com
+  github    : fsk141
+  twitter   : fsk141
+  reddit    : fsk141
+  flickr    : fsk141
+  lastfm    : fsk141
+  feedname  : Fsk141
+  btcaddy   : 1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT

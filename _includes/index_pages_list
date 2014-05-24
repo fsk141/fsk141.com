@@ -1,0 +1,17 @@
+{% if site.index_pages_list.provider == "custom" %}
+  {% include custom/index_pages_list %}
+{% else %}
+  {% for node in index_pages_list %}
+    {% if node.title != null %}
+      {% if group == null or group == node.group %}
+      	{% if page.url == node.url %}
+      	<li class="active" style="margin-bottom: 0;"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}} -- {{node.date | date: "%b %-d, %Y" }}</a></li>
+      	{% else %}
+      	<li style="margin-bottom: 0;"><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}} -- {{node.date | date: "%b %-d, %Y" }}</a></li>
+      	{% endif %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% assign index_pages_list = nil %}
+{% assign group = nil %}

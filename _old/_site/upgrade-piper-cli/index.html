@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Update Your Piper via CLI</title>
+		<meta name="description" content="The piper is a low cost, all in one, beautiful piece of equipment. It provides a cost effective solution for secure offline wallet generation. Comprised of a raspberry pi, thermal printer, and a single button for operation. It's incredibly easy to operate, and functions entirely independently (just requires power). It also can even be plugged into a monitor, keyboard, &amp; mouse to provide a graphical configuration interface / desktop environment. The other day I received an [email](http://us7.campaign-archive1.com/?u=5600dcb59fc896fa75b7b3d6c&id=f23b4f9732&e=b6d25600af) stating that a new update was available. While I was excited for some of the changes (such as continuous printing), I was too lazy to plugin a monitor, keyboard, and mouse to initiate the upgrade. Instead I plugged it into my network, spent a minute looking at the upgrade script, and ran it from the command line.">
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>Update Your Piper via CLI <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p><a href="/a/2014-01-19-upgrade-piper-cli/piper-upgraded.jpg"><img src="/a/2014-01-19-upgrade-piper-cli/piper-upgraded_600x600.jpg" /></a></p>
+
+<h1 id="introduction">Introduction</h1>
+<p>The piper is a low cost, all in one, beautiful piece of equipment. It provides a cost effective solution for secure offline wallet generation. Comprised of a raspberry pi, thermal printer, and a single button for operation. It’s incredibly easy to operate, and functions entirely independently (just requires power). It also can even be plugged into a monitor, keyboard, &amp; mouse to provide a graphical configuration interface / desktop environment. The other day I received an <a href="http://us7.campaign-archive1.com/?u=5600dcb59fc896fa75b7b3d6c&amp;id=f23b4f9732&amp;e=b6d25600af">email</a> stating that a new update was available. While I was excited for some of the changes (such as continuous printing), I was too lazy to plugin a monitor, keyboard, and mouse to initiate the upgrade. Instead I plugged it into my network, spent a minute looking at the upgrade script, and ran it from the command line.</p>
+
+<h1 id="download-amp-investigation">Download &amp; Investigation</h1>
+<p>I started out by downloading the update ( <a href="https://piperwallet.com/updates/update2.zip">https://piperwallet.com/updates/update2.zip</a> ) to my local machine and checked out the contents. Upon unzip’ing, I found it contains an Instructions.rtf &amp; an update.tar file. The Instructions.rtf was filled with a detailed description on how to plug in the piper to a monitor, keyboard, and mouse; proceeding to untar the update.tar &amp; run it by “double clicking.” Like I mentioned I’m way too lazy to do all of that :), so I plugged it into a free port on my router, plugged it in, and waited for it to showup on my dhcp table.</p>
+
+<p>While it was booting away I studied the contents of update2.zip a little more in depth. I began by untar’ing update.tar and was greeted with the following:</p>
+
+<div>
+    <pre><code class="bash">├── updater
+│   ├── copyKeys.py
+│   ├── data
+│   ├── data1.sh
+│   ├── data2.sh
+│   ├── dist-packages
+│   ├── updater
+│   └── updater-src
+│       └── updater.c</code></pre>
+  </div>
+
+<p>I quickly checked out updater-src &amp; was greeted with an incredibly simple C file that runs the following:</p>
+<div>
+    <pre><code class="bash">#include &lt;stdio.h&gt;
+int main(){
+	system(&quot;/bin/bash /home/pi/Desktop/updater/data1.sh&quot;);
+}</code></pre>
+  </div>
+
+<p>Checked out data1.sh which simply calls data2.sh &amp; sends a couple xmessage notifications to inform the user of the progress. I double checked data2.sh &amp; found out it’s all simple command line arguments to backup the old &amp; replace with the new. </p>
+
+<p>After examining the files at hand and becoming content with the expected results, I checked back on my router to see if anything had popped up.</p>
+
+<h2 id="bingo">Bingo!</h2>
+<p><a href="/a/2014-01-19-upgrade-piper-cli/dhcp-readout.png"><img src="/a/2014-01-19-upgrade-piper-cli/dhcp-readout_600x600.png" /></a></p>
+
+<p>I tried to ssh with a few default credentials, and failed. Went looking for the default raspberry login (it’s what piper is built on top of); and found out the default user:pass combo is pi:raspberry ; tried this &amp; failed. Then tried pi:piper &amp; was greeted with a console prompt.</p>
+
+<p>That was easy! I proceeded to transfer update.tar, run data1.sh, reboot, &amp; enjoy my newly updated piper (ver1.05)</p>
+
+<div>
+    <pre><code class="bash">#(on local machine) -- send update.tar to piper [user: pi ; password: piper] ; replace 10.1.1.115 with your ip
+scp update.tar pi@10.1.1.115:
+ssh pi@10.1.1.115
+mv update.tar ~/Desktop
+cd ~/Desktop
+tar xf update.tar
+cd updater
+./data1.sh
+#wait till complete :)
+sudo reboot</code></pre>
+  </div>
+
+<h1 id="conclusion">Conclusion</h1>
+<p>After the reboot, you should be greeted with a happy stub of paper spit out the top of the piper. It’ll notify you of the successful update, and provide you a version number (like the first image in this post). Enjoy your newly updated piper &amp; keep on printing on :)</p>
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+		  <li><a href="/review-yubikey-lets-get-obscure-with-otp">[Review] Yubikey - Let's get obscure with otp <i>(December 22, 2011)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+		  <li><a href="/slow-zfs-zpool">Slow ZFS zpool? <i>(October 06, 2010)</i></a></li>
+		  
+		  <li><a href="/how-to-properly-use-sudo">sudo (brief history -- &amp; installation) -- Part one of multipart series <i>(October 25, 2011)</i></a></li>
+		  
+		  <li><a href="/tutorial-openvz-debian-zenoss-monitor-your-world">[Tutorial] OpenVZ - Debian - Zenoss (monitor your world) <i>(October 08, 2010)</i></a></li>
+		  
+		  <li><a href="/conky-templates-do-more-write-less">Conky Templates (Do more, Write Less) <i>(September 05, 2012)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/gsl-fix-archlinux" title="GSL Fix Arch Linux (Downgrade to 1.14)">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/all-in-with-bitcoin" title="All In With Bitcoin">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>18 January 2014</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#Piper-ref">Piper <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#Bitcoin-ref">Bitcoin <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#Hardware Wallet-ref">Hardware Wallet <span>1</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+

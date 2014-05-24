@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Slow ZFS zpool?</title>
+		
+		<meta name="author" content="Jonny">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- HTML5 for IE -->
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<![endif]-->
+
+	    <!-- Style -->
+	    <link href="/assets/themes/fsk141/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="/assets/themes/fsk141/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+		<link href="/assets/themes/fsk141/css/pygmentize.css" rel="stylesheet">
+
+		<!-- apple icons go here -->
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+			  <div class="span3 well">
+				<h1><a class="brand" href="/">Fsk141</a></h1>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link"></h2>
+				<h3 class="h2link">
+
+
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+</h2>
+				<br>
+				<div class="misc vcard">
+					<h4>about</h4>
+					<ul>
+						<li class="contact"><address><span class="author fn n">Jonny</span> - <span class="fn email">jonny@fsk141.com</span></address></li>
+						<li class="rss"><a href="http://feeds.feedburner.com/Fsk141">Subscribe to RSS Feed</a></li>
+						<li class="github"><a href="http://github.com/fsk141/" rel="me">github.com/fsk141</a></li>
+						<li class="twitter"><a href="http://twitter.com/fsk141/" rel="me">twitter.com/fsk141</a></li>
+						<!-- <li class="reddit"><a href="http://reddit.com/user/fsk141/" rel="me">reddit.com/user/fsk141</a></li> -->
+						<!-- <li class="flickr"><a href="http://flickr.com/photos/fsk141/" rel="me">flickr.com/photos/fsk141</a></li> -->
+						<li class="lastfm"><a href="http://last.fm/user/fsk141/" rel="me">last.fm/user/fsk141</a></li>
+						<li class="btc_donate">Donate some btc's:<br />
+							<span style="font-size: 0.5em;">
+							<script src="http://coinwidget.com/widget/coin.js"></script>
+							<script>
+							CoinWidgetCom.go({
+								wallet_address: "1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT"
+								, currency: "bitcoin"
+								, counter: "count"
+								, alignment: "bl"
+								, qrcode: true
+								, auto_show: false
+								, lbl_button: "Donate"
+								, lbl_address: "BTC Address:"
+								, lbl_count: "donations"
+								, lbl_amount: "BTC"
+							});
+							</script>
+							</span></li>
+					</ul>
+					<ul class="tag_box inline">
+						
+						
+
+
+  
+     
+    	<li><a href="/categories.html#programming-ref">
+    		programming <span>11</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#software-ref">
+    		software <span>16</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#zfs-ref">
+    		zfs <span>4</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#linux-ref">
+    		linux <span>50</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#opensolaris-ref">
+    		opensolaris <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#networking-ref">
+    		networking <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#hardware-ref">
+    		hardware <span>9</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#homebrew-ref">
+    		homebrew <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#other stuff-ref">
+    		other stuff <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#tutorials-ref">
+    		tutorials <span>8</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#mac-ref">
+    		mac <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#photography-ref">
+    		photography <span>1</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#kindle-ref">
+    		kindle <span>2</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#reviews-ref">
+    		reviews <span>3</span>
+    	</a></li>
+     
+    	<li><a href="/categories.html#bitcoin-ref">
+    		bitcoin <span>2</span>
+    	</a></li>
+    
+  
+
+
+					</ul>
+				</div>
+				<p>&copy; Jonny 2013 with help from <a href="http://jekyllbootstrap.com">Jekyll Bootstrap</a></p>
+			  </div>
+
+			  <div class="offset-1" style="padding-top:20px;">
+				  
+<div class="">
+	<h1>Slow ZFS zpool? <small></small></h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    <p><a href="http://www.flickr.com/photos/68444690@N00/5058827436/"><img src="http://farm5.static.flickr.com/4103/5058827436_54ff6bc68a.jpg" alt="IMAG0122" /></a></p>
+
+<p>Is a slow zfs pool giving you the blue’s? Well it sure was for me, and it took me forever to figure out the problem. I scoured the internet for many solutions, many of which didn’t work, and it wasn’t until I used my brain did I figure out what was happening ;) Hopefully this post can reduce your frustrations, and help you resolve your slow zfs pool easily.
+I checked so many things, and in the end it was something very simple. But lets start with all the things that I tried &amp; didn’t work. These are common problems with zfs when you use cheap consumer hardware. I’m using Western Digital Green Drives, and this is the price that I have to pay.</p>
+
+<p><strong>Wrong Direction:</strong></p>
+
+<ul>
+  <li>**TLER - **First I thought that <a href="http://en.wikipedia.org/wiki/Time-Limited_Error_Recovery">Time-Limited Error Recovery (TLER)</a> was dramatically slowing the drives down. I had heard of this happening &amp; went off to google to find some solutions. The wikipedia page « explains that WDTLER.EXE can help, so I tried that on my warrior boot usb (I’ll post this later), and it didn’t work for me, it just hung. So I started up another thing on my boot usb (<a href="http://partedmagic.com">PartedMagic</a>) &amp; went the trusty ol’ Open Source route with smartmontools. You need to download from svn &amp; compile manually to get the new features. Then run the following:</li>
+</ul>
+
+<div>
+    <pre><code class="bash">smartctl -l scterc /dev/sda # Query the drive for TLER status
+smartctl -l scterc,70,70 /dev/sda # This will set TLER to 7 seconds (default)</code></pre>
+  </div>
+
+<div>
+    <pre><code class="bash"># You get this if your drive can&#39;t do TLER (bummer)
+Warning: device does not support SCT Error Recovery Control command
+
+# This is what you will get if your drive has TLER enabled (hooray)
+SCT Error Recovery Control:
+           Read:     70 (7.0 seconds)
+          Write:     70 (7.0 seconds)</code></pre>
+  </div>
+
+<ul>
+  <li><strong>Then I thought “You have 100% blocking”:</strong></li>
+</ul>
+
+<div>
+    <pre><code class="bash"># iostat -xnz
+&lt;pre&gt;
+&lt;pre&gt;                    extended device statistics
+    r/s    w/s   kr/s   kw/s wait actv wsvc_t asvc_t  %w  %b device
+    0.0   87.0    0.0 2878.1  0.0  0.0    0.0    0.4   0 100 c4t0d0
+    0.0   83.0    0.0 2878.1  0.0  0.1    0.2    0.7   1  50 c4t1d0
+    1.0    0.0   28.0    0.0  0.0  0.0    0.0    5.4   0   1 c4t2d0</code></pre>
+  </div>
+
+<p>See disk c4t0d0 is at 100% blocking :( Anywho here is a fix for that:</p>
+
+<div>
+    <pre><code class="bash">su - # enter password
+echo zfs_vdev_max_pending/W0t1 | mdb -kw
+echo &quot;set zfs:zfs_vdev_max_pending=1&quot; &gt;&gt; /etc/system</code></pre>
+  </div>
+
+<p>This is normally the case of ZFS using incorrect scheduling &amp; sending your cheap sata disks too many tasks &amp; overloading them. Thankfully I didn’t have blocking, but I made the patch anyways since I’m using WD Green drives.</p>
+
+<ul>
+  <li><strong>“Your drives are idling too much? (clicking sound)”</strong></li>
+</ul>
+
+<p>Fire up smartctl again &amp; run the following:</p>
+
+<div>
+    <pre><code class="bash">smartctl -a /dev/rdisk1 | grep ID ; smartctl -a /dev/rdisk1 | grep Start
+
+# This is what I got on my macbook pro - 320GB caviar black drive (it&#39;s my secondary)
+
+[jgerold@jgerold-13mbp.oc.cox.net ~]$ smartctl -a /dev/rdisk1 | grep ID ; smartctl -a /dev/rdisk1 | grep Start
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+ 4 Start_Stop_Count        0x0032   099   099   000    Old_age   Always       -       1770</code></pre>
+  </div>
+
+<p>Should think about maybe replacing this soon?</p>
+
+<p>Not necessarily, upon looking at the PDF from Western Digital I have 600,000 spin up/down to look forward to on this disk. I’m not sure if RAW_VALUE equates to actual spin up/down &amp; that smartctl is just being funky?</p>
+
+<p>But if you have a lower value, then I wouldn’t worry; yet if your count is high &amp; ever growing then I would recommend you boot into a windows instance (use bartpe of some sort), and grab a copy of WDIDLE.EXE (<a href="http://webdiary.com/i/?p=515">http://webdiary.com/i/?p=515</a>) and turn off idleing wdiddle /d or something like that? I’m not sure I haven’t tried it.</p>
+
+<p><strong>Right Direction (This is what fixed it for me):</strong></p>
+
+<p>I removed a horrible disk from my pool!</p>
+<div>
+    <pre><code class="bash">zpool offline ambry c0d4</code></pre>
+  </div>
+
+<p>I wish I had the readout for my ‘iostat -mX’ but my forth drive had a 3285ms timeout and was making the whole pool slow down to a crawl because it was failing (but not dead). I was noticing full disk usage with I would do an ls on a small dir, or copy data, or anything that required disk use. The crazy thing is that it took about 3 days for the array to recover once I removed the bad disk from the pool. Me being ever curious would run the following to monitor how fast the drives were:</p>
+
+<div>
+    <pre><code class="bash">while true; iostat -mX /dev/{ct01,ct02,ct03}; sleep 1; done</code></pre>
+  </div>
+
+<p>I joyfully watched my disks go from about .5 MB/s to now over 120MB/s (per disk)</p>
+
+<p><strong>Afterthoughts:</strong></p>
+
+<p>I wish I would have ran an iostat before trying all the things that I did :( But everything looks better in hindsight. I’m just glad that this is fixed and I was able to make a secondary backup, just in case anything else goes wrong before I get my new server up.</p>
+
+<p><strong>Sources:</strong>
+- <a href="http://en.wikipedia.org/wiki/Time-Limited_Error_Recovery">http://en.wikipedia.org/wiki/Time-Limited_Error_Recovery</a>
+- <a href="http://letsgetdugg.com/2009/10/21/zfs-slow-performance-fix">http://letsgetdugg.com/2009/10/21/zfs-slow-performance-fix</a>
+- <a href="http://www.csc.liv.ac.uk/~greg/projects/erc">http://www.csc.liv.ac.uk/~greg/projects/erc</a>
+- <a href="http://webdiary.com/i/?p=515">http://webdiary.com/i/?p=515</a></p>
+
+    <hr>
+
+	<h3>Related posts</h3>
+	<ul>
+		
+		  <li><a href="/rtorrent-the-complete-guide">rTorrent -- The complete guide <i>(December 31, 2011)</i></a></li>
+		  
+		  <li><a href="/review-pc-engines-alix6e1">[Review] PC-Engines alix6e1 <i>(November 07, 2010)</i></a></li>
+		  
+		  <li><a href="/kernel-compilation-arch-linux">Kernel Compilation &amp; Arch Linux <i>(March 31, 2009)</i></a></li>
+		  
+		  <li><a href="/zfs-pool-setup-configure">ZFS Pool (Setup &amp; Configure) <i>(November 21, 2009)</i></a></li>
+		  
+		  <li><a href="/my-fear-of-mutt-and-why-it-was-all-for-null">My fear of mutt, and why it was all for NULL <i>(October 24, 2011)</i></a></li>
+		  
+		  <li><a href="/boot-isos-with-grub-2">Boot iso's with grub 2 <i>(January 17, 2011)</i></a></li>
+		  
+		  <li><a href="/potw-bwm-hg">[PotW] bwm-hg <i>(October 26, 2010)</i></a></li>
+		  
+		  <li><a href="/arch-linux-on-imac-arch-only">Arch Linux on iMac [Arch Only] <i>(September 21, 2010)</i></a></li>
+		  
+		  <li><a href="/entering-walled-gardens">Entering Walled Garden's <i>(September 16, 2011)</i></a></li>
+		  
+		  <li><a href="/flickr-in-linux">Flickr with Linux <i>(October 15, 2009)</i></a></li>
+		  
+	</ul>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/a-little-find-magic" title="A little find magic">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/tutorial-add-more-ram-to-an-openvz-container" title="[Tutorial] Add more RAM to an OpenVZ container">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+  </div>
+
+  <div class="">
+    <h4>Published</h4>
+    <div class="date"><span>06 October 2010</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#openindiana-ref">openindiana <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#Opensolaris-ref">Opensolaris <span>3</span></a></li>
+     
+    	<li><a href="/tags.html#slow-ref">slow <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#smartctl-ref">smartctl <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#smartmontools-ref">smartmontools <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#tler-ref">tler <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#wdidle-ref">wdidle <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#wdtler-ref">wdtler <span>1</span></a></li>
+     
+    	<li><a href="/tags.html#zfs-ref">zfs <span>3</span></a></li>
+    
+  
+
+
+
+    </ul>
+  
+  </div>
+</div>
+
+<div class="row">
+  <div class="span10 offset2">
+    <hr>
+    
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'fsk141'; // required: replace example with your forum shortname
+    var disqus_identifier = '414 http://fsk141.com/?p=414';
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+  </div>
+</div>
+
+
+			  </div>
+
+		  </div>
+	  </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/themes/fsk141/js/jquery.min.js"><\/script>')</script>
+    <script src="/assets/themes/fsk141/js/bootstrap.min.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.fsk141.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+    g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+  </body>
+</html>
+
