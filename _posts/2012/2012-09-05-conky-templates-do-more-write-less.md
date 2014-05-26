@@ -2,7 +2,7 @@
 layout: post
 title: "Conky Templates (Do more, Write Less)"
 description: "Conky is a powerful tool that gives you information and statistics about your PC. With all of the possible variables that you can choose from, and multiple things you can monitor it becomes easy to have a bloated config. Repeated content, color associations, naming conventions, etc. Repetitive information such as network interfaces, cpu monitoring, and hdd info can easily be templated. Not only to make your config easier to read, but will save you a caboodle of keystrokes from not having to type repetitive content."
-category: Linux
+categories: Linux
 tags: [conky, conky templates]
 ---
 

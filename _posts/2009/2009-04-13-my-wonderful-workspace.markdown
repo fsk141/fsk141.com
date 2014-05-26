@@ -1,10 +1,10 @@
 ---
 date: '2009-04-13 08:16:08'
 layout: post
-slug: my-wonderful-workspace
 status: publish
 title: My Wonderful Workspace
-wordpress_id: '18'
+categories:
+- other stuff
 tags:
 - desk
 ---

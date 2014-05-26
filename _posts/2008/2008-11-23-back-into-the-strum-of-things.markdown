@@ -1,10 +1,10 @@
 ---
 date: '2008-11-23 00:00:00'
 layout: post
-slug: back-into-the-strum-of-things
 status: publish
 title: Back into the strum of things
-wordpress_id: '56'
+categories:
+- other stuff
 tags:
 - guitar
 ---

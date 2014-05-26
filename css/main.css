@@ -1,7 +1,7 @@
 /* Base */
 /* ----------------------------------------------------------*/
 
-/* @import url(http://fonts.googleapis.com/css?family=Oxygen); */
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
 
 * {
   margin: 0;
@@ -74,6 +74,8 @@ a[href$=jpg], a[href$=jpeg], a[href$=jpe], a[href$=png], a[href$=gif], a[href*="
 .tag_box a.active {
   border:1px solid #4C964D;
 }
+
+#disqus_thread { margin-left: 20px; margin-right: 20px; }
 
 /* Utility */
 
@@ -360,20 +362,18 @@ a.post-link:visited:hover{
 .post-content ul,
 .post-content ol { padding-left: 20px; }
 
+.post pre { margin-left: 40px; margin-right: 20px; } 
+
 .post pre,
 .post code {
   border: 1px solid #d5d5e9;
   background-color: #eef;
-  padding: 8px 12px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   font-size: 15px;
-  margin: 0 20px 0 20px;
   overflow: auto;
 }
-
-.post code { padding: 1px 5px; }
 
 .post ul,
 .post ol { margin-left: 1.35em; }

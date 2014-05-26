@@ -1,13 +1,15 @@
 ---
 layout: page
 title: Contact
-permalink: /contact/
-group: navigation
+permalink: /contactDone/
 ---
+
+    Thanks, Your message was sent along through the intertubes, I'll get back to you shortly.
 
 Contact me, I don't bite:
 
 Jonny Gerold
+
 jonny@fsk141.com
 
 ...or use the form below

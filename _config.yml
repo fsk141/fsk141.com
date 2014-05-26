@@ -5,6 +5,7 @@
 # Build Settings
 permalink   : none
 markdown    : kramdown
+highlighter : pygments
 lsi         : true
 include     : [".htaccess"]
 exclude     : ["README.md", "Rakefile"]
@@ -15,6 +16,11 @@ tagline     : ^_^
 #description :
 baseurl     : http://fsk141.com
 
+btcdonate  :
+    title       : Like what you see, throw a coffee my way
+    text        : I run this blog without ads because I hate them, and I would rather provide good content than rely on ads to monitize. If you found this post useful I would be tickled to have some of my daily caffine / beer intake funded by you :P Each link is unique to the post (except for old posts cause I'm lazy), vote with a few satoshi's and inform me on what you want to hear more about.
+    defaultaddy : 1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT
+
 author  :
   name      : Jonny Gerold
   email     : jonny@fsk141.com
@@ -24,4 +30,4 @@ author  :
   flickr    : fsk141
   lastfm    : fsk141
   feedname  : Fsk141
-  btcaddy   : 1ByZeEBE2wtUabcAhgPEp7yjttFJJZWDdT
+  disqus    : fsk141
