@@ -5,7 +5,7 @@ slug: how-to-secret-sharing
 title: "[Tutorial] Secret Sharing"
 btcaddy: "1Hzx83FJcbA3r5T5zPad8SR7ggxsw9KKQX"
 categories:
-- Tutorial
+- Tutorials
 tags:
 - ssss
 - Secret Sharing

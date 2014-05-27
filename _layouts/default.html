@@ -31,5 +31,26 @@
 <noscript><p><img src="http://analytics.fsk141.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 <!-- End Piwik Code -->
 
+				
+<!-- Start Open Web Analytics Tracker -->
+<script type="text/javascript">
+//<![CDATA[
+var owa_baseUrl = 'http://analytics2.fsk141.com/';
+var owa_cmds = owa_cmds || [];
+owa_cmds.push(['setSiteId', '4420c96ca7c9ca0d486ecf5426dad54a']);
+owa_cmds.push(['trackPageView']);
+owa_cmds.push(['trackClicks']);
+owa_cmds.push(['trackDomStream']);
+
+(function() {
+ 	var _owa = document.createElement('script'); _owa.type = 'text/javascript'; _owa.async = true;
+		owa_baseUrl = ('https:' == document.location.protocol ? window.owa_baseSecUrl || owa_baseUrl.replace(/http:/, 'https:') : owa_baseUrl );
+			_owa.src = owa_baseUrl + 'modules/base/js/owa.tracker-combined-min.js';
+				var _owa_s = document.getElementsByTagName('script')[0]; _owa_s.parentNode.insertBefore(_owa, _owa_s);
+				}());
+//]]>
+</script>
+<!-- End Open Web Analytics Code -->
+
     </body>
 </html>
